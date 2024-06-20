@@ -1,0 +1,83 @@
+@import "../../styles/variables.scss";
+
+@mixin fontHeadings {
+	font-family: "Literata", serif, "Georgia", "Times New Roman", Times, serif;
+	font-weight: 400;
+}
+
+@mixin fontBody {
+	font-family: "Merriweather", serif;
+	font-weight: 400;
+}
+
+.login {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	&__card {
+		
+		margin-top: 4vh;
+		
+		height: 40rem;
+	}
+	&__image {
+		width: 300px;
+	}
+	&__heading {
+		@include fontHeadings;
+		font-size: 2rem;
+		color: $dark-blue;
+		text-transform: capitalize;
+	}
+
+	&__textfields {
+		& .MuiFormLabel-root {
+			font-family: "Merriweather", serif;
+		}
+
+		& .css-md26zr-MuiInputBase-root-MuiOutlinedInput-root {
+			border-color: $yellow;
+		}
+
+		& .css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+			border-color: $yellow;
+		}
+	}
+	& .MuiInputBase-input {
+		font-family: "Merriweather", serif;
+	}
+
+	&__signin-button {
+		&.css-1vhaqj4-MuiButtonBase-root-MuiButton-root {
+			@include fontHeadings;
+			background-color: $orange;
+			letter-spacing: 0.15rem;
+		}
+	}
+
+	&__register-text {
+		@include fontBody;
+		color: $secondary-blue;
+		font-size: 1rem;
+		text-align: center;
+	}
+
+	& .MuiBox-root {
+		padding-bottom: 1rem;
+	}
+
+	&__password-reset-text {
+		@include fontBody;
+		font-size: 1rem;
+		text-align: center;
+		color: $dark-blue;
+	}
+	&__register-text-container {
+		display: flex;
+		flex-direction: column;
+		height: 3rem;
+		justify-content: space-between;
+		margin-top: 1rem;
+	}
+}

@@ -1,0 +1,18 @@
+@font-face {
+  font-family: "Merriweather", serif;
+  font-style: normal;
+  font-weight: 400;
+  src: url("../assets/fonts/Merriweather-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Literata", serif;
+  font-style: normal;
+  font-weight: 400;
+  src: url("../assets/fonts/Literata-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "American Typewriter";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../assets/fonts/American Typewriter Regular.ttf") format("truetype");
+}/*# sourceMappingURL=typography.css.map */

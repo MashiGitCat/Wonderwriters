@@ -1,0 +1,50 @@
+@import "../../styles/variables.scss";
+@import "../../styles/typography.css";
+
+@mixin fontHeadings {
+  font-family: "Literata", serif, "Georgia", "Times New Roman", Times, serif;
+  font-weight: 400;
+}
+
+@mixin fontBody {
+  font-family: "Merriweather", serif;
+  font-weight: 400;
+}
+
+.welcome {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  &__circle-placeholder {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #cccccc;
+    margin-bottom: 20px;
+    background-size: cover;
+    background-position: center;
+  }
+  &__heading {
+    @include fontHeadings;
+    font-size: 1.8rem;
+    position: relative;
+    text-align: center;
+  }
+  &__line {
+    margin: 16px auto;
+    width: 20px;
+    height: 2px;
+    border-radius: 100px;
+    background-color: $dark-blue;
+  }
+  &__button {
+    @include fontBody;
+    background-color: $secondary-blue;
+    &:hover,
+    &:active {
+      background-color: $dark-blue;
+    }
+  }
+}

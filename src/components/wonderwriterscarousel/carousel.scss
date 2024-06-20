@@ -1,0 +1,33 @@
+@import "../../styles/variables.scss";
+
+@mixin fontHeadings {
+  font-family: "Literata", serif, "Georgia", "Times New Roman", Times, serif;
+  font-weight: 400;
+}
+
+@mixin fontBody {
+  font-family: "Merriweather", serif;
+  font-weight: 400;
+}
+
+.carousel {
+  &__inside-text {
+    @include fontBody;
+    text-align: center;
+    font-size: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    line-height: 2.4rem;
+    color: $yellow;
+    text-shadow: 2px 2px 9px rgba(0, 0, 0, 0.8);
+    letter-spacing: 0.3rem;
+  }
+
+  &__inside-text-underline {
+    width: 50%;
+    height: 2px;
+    background-color: $yellow;
+    margin: auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+  }
+}

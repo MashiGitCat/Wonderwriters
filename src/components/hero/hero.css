@@ -1,0 +1,63 @@
+body,
+h1,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.hero {
+  background-image: url("https://res.cloudinary.com/dchzjr4bz/image/upload/v1705653497/image_123650291_1_uvecza.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 8.7rem;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+}
+.hero__text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  margin-bottom: 18rem;
+}
+.hero__text-container__subtitle-container {
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+}
+.hero__text-container__title {
+  font-family: "Literata", serif, "Georgia", "Times New Roman", Times, serif;
+  font-weight: 400;
+  font-size: 2rem;
+  color: #494990;
+  font-weight: 600;
+  margin-top: 4rem;
+  margin-bottom: 1rem;
+}
+.hero__text-container__subtitle {
+  font-family: "Merriweather", serif;
+  font-weight: 400;
+  font-size: 1rem;
+  margin-top: -1rem;
+  display: inline-block;
+}
+.hero__text-container__subtitle--letter {
+  display: inline-block;
+  transition: color 0.3s ease;
+}/*# sourceMappingURL=hero.css.map */

@@ -1,0 +1,58 @@
+.signup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.signup__image {
+  width: 340px;
+}
+.signup__card {
+  padding: 2rem;
+  width: 100%;
+  max-width: 400px;
+  margin-top: 4vh;
+}
+.signup__heading {
+  font-family: "Literata", serif, "Georgia", "Times New Roman", Times, serif;
+  font-weight: 400;
+  font-size: 2rem;
+  color: #0F1EAF;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.signup__textfields {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+.signup__textfields .MuiFormLabel-root {
+  font-family: "Merriweather", serif;
+  font-weight: 400;
+}
+.signup__textfields .MuiInputBase-input {
+  font-family: "Merriweather", serif;
+  font-weight: 400;
+}
+.signup__textfields .MuiOutlinedInput-root:hover fieldset {
+  border-color: #FDBD29;
+}
+.signup__textfields .MuiOutlinedInput-root.Mui-focused fieldset {
+  border-color: FD641F;
+}
+.signup__sign-in-button {
+  background-color: #FD641F;
+  letter-spacing: 0.15rem;
+  font-family: inherit;
+}
+.signup__sign-in-button:hover {
+  background-color: #e74902;
+}
+.signup__password-reset-text {
+  font-family: "Merriweather", serif;
+  font-weight: 400;
+  font-size: 1rem;
+  text-align: center;
+  color: #0F1EAF;
+  cursor: pointer;
+  margin-top: 1rem;
+}/*# sourceMappingURL=signup.css.map */

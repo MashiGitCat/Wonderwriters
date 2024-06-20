@@ -1,0 +1,80 @@
+@import "../../styles/variables.scss";
+
+@mixin fontHeadings {
+  font-family: "Literata", serif, "Georgia", "Times New Roman", Times, serif;
+  font-weight: 400;
+}
+
+@mixin fontBody {
+  font-family: "Merriweather", serif;
+  font-weight: 400;
+}
+
+@mixin fontTitle {
+  font-family: "American Typewriter";
+  font-style: normal;
+}
+
+.steps {
+  background-color: $pale-cream;
+
+  &__heading {
+    text-align: center;
+    margin-top: 0;
+    padding-top: 2rem;
+    @include fontHeadings;
+    font-weight: bold;
+	font-size: 2rem;
+  }
+
+  &__card {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 0.8rem;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+	&:hover {
+		box-shadow: 0 8px 16px rgba(0,0,0,0.2); 
+		transform: translateY(-5px); 
+	  }
+  }
+
+  &__card-heading {
+    @include fontBody;
+    text-align: center;
+    font-weight: bold;
+    background-color: $orange;
+    border-radius: 0.8rem;
+    display: flex;
+    justify-content: center;
+    width: 5rem;
+    margin: 1rem;
+    align-items: center;
+    padding: 0.8rem 0.8rem;
+    font-size: 1.6rem;
+  }
+  &__card-image {
+    object-fit: cover;
+
+    @media (max-width: 768px) {
+      height: 15rem;
+    }
+  }
+
+  &__card-content {
+    @include fontTitle;
+    letter-spacing: 0.1rem;
+    text-align: center;
+    color: $orange;
+  }
+
+  &__card-paragraph {
+    @include fontBody;
+    font-size: 1.2rem;
+    padding: 0;
+    line-height: 2rem;
+  }
+}

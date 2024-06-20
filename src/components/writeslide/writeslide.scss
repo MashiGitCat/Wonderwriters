@@ -1,0 +1,71 @@
+@mixin fontHeadings {
+	font-family: "Literata", serif, "Georgia", "Times New Roman", Times, serif;
+	font-weight: 400;
+}
+
+@mixin fontBody {
+	font-family: "Merriweather", serif;
+	font-weight: 400;
+}
+.canvas-container {
+    background-color: white;
+    border-radius: 7px;
+    width: 700px;
+    height: 438px;
+    box-shadow: 0 13px 20px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    margin: 20px auto;
+    transform: scale(0.7);
+    transform-origin: left top;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    margin-bottom: -110px;
+  
+    &.top {
+      flex-direction: column;
+    }
+  
+    &.left,
+    &.right {
+      flex-direction: row;
+    }
+  }
+  
+  .image-placeholder {
+    background-color: #f4f4f4;
+    background-size: cover;
+  
+    &.top {
+      width: 100%;
+      height: 50%;
+      order: 0;
+    }
+  
+    &.right {
+      width: 46%;
+      height: 100%;
+      order: 2;
+    }
+  
+    &.left {
+      width: 46%;
+      height: 100%;
+      order: 0;
+    }
+  }
+  
+  .styled-text-field {
+    flex-grow: 1;
+    margin: 1rem 3%;
+  
+    &.top {
+      width: 95%;
+    }
+  
+    &.left,
+    &.right {
+      width: 30%;
+    }
+  }

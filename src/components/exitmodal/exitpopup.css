@@ -1,0 +1,37 @@
+body,
+h1,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.popup__content {
+  font-family: "American Typewriter" !important;
+  text-align: center;
+  font-size: 1.8rem;
+  color: #fd641f;
+  line-height: 3rem;
+  font-weight: bold;
+  letter-spacing: 0.3rem;
+}
+.popup__buttons {
+  font-family: "Merriweather", serif !important;
+  font-weight: 400;
+  color: #0F1EAF !important;
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  justify-content: space-evenly;
+  text-transform: capitalize;
+}
+.popup__paragraph {
+  font-family: "Merriweather", serif !important;
+  font-weight: 400;
+  font-size: 1.3rem;
+  color: #fd641f !important;
+}
+.popup__button-container {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}/*# sourceMappingURL=exitpopup.css.map */

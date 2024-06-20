@@ -1,0 +1,62 @@
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.login__card {
+  margin-top: 4vh;
+  height: 40rem;
+}
+.login__image {
+  width: 300px;
+}
+.login__heading {
+  font-family: "Literata", serif, "Georgia", "Times New Roman", Times, serif;
+  font-weight: 400;
+  font-size: 2rem;
+  color: #0F1EAF;
+  text-transform: capitalize;
+}
+.login__textfields .MuiFormLabel-root {
+  font-family: "Merriweather", serif;
+}
+.login__textfields .css-md26zr-MuiInputBase-root-MuiOutlinedInput-root {
+  border-color: #FDBD29;
+}
+.login__textfields .css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+  border-color: #FDBD29;
+}
+.login .MuiInputBase-input {
+  font-family: "Merriweather", serif;
+}
+.login__signin-button.css-1vhaqj4-MuiButtonBase-root-MuiButton-root {
+  font-family: "Literata", serif, "Georgia", "Times New Roman", Times, serif;
+  font-weight: 400;
+  background-color: #FD641F;
+  letter-spacing: 0.15rem;
+}
+.login__register-text {
+  font-family: "Merriweather", serif;
+  font-weight: 400;
+  color: #1655f2;
+  font-size: 1rem;
+  text-align: center;
+}
+.login .MuiBox-root {
+  padding-bottom: 1rem;
+}
+.login__password-reset-text {
+  font-family: "Merriweather", serif;
+  font-weight: 400;
+  font-size: 1rem;
+  text-align: center;
+  color: #0F1EAF;
+}
+.login__register-text-container {
+  display: flex;
+  flex-direction: column;
+  height: 3rem;
+  justify-content: space-between;
+  margin-top: 1rem;
+}/*# sourceMappingURL=login.css.map */

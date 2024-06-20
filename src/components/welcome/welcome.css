@@ -1,0 +1,39 @@
+@import "../../styles/typography.css";
+.welcome {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.welcome__circle-placeholder {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: #cccccc;
+  margin-bottom: 20px;
+  background-size: cover;
+  background-position: center;
+}
+.welcome__heading {
+  font-family: "Literata", serif, "Georgia", "Times New Roman", Times, serif;
+  font-weight: 400;
+  font-size: 1.8rem;
+  position: relative;
+  text-align: center;
+}
+.welcome__line {
+  margin: 16px auto;
+  width: 20px;
+  height: 2px;
+  border-radius: 100px;
+  background-color: #0F1EAF;
+}
+.welcome__button {
+  font-family: "Merriweather", serif;
+  font-weight: 400;
+  background-color: #1655f2;
+}
+.welcome__button:hover, .welcome__button:active {
+  background-color: #0F1EAF;
+}/*# sourceMappingURL=welcome.css.map */

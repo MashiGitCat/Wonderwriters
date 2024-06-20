@@ -1,0 +1,82 @@
+#cover-layout {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-image: url(static/images/editor/noise100x100.png);
+}
+#cover-layout.cover-style-0 #cover-image {
+  width: 66%;
+  height: 100%;
+  right: 0px;
+  position: absolute;
+}
+#cover-layout.cover-style-0 #cover-title {
+  width: 29%;
+  height: 67%;
+  font-size: 250%;
+  margin: 3%;
+  line-height: 120%;
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+}
+#cover-layout.cover-style-1 #cover-image {
+  width: 100%;
+  height: 50%;
+  top: 0;
+  position: absolute;
+}
+#cover-layout.cover-style-1 #cover-title {
+  width: 100%;
+  height: auto;
+  font-size: 250%;
+  margin: 3% auto;
+  line-height: 120%;
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#cover-image {
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+#cover-title {
+  font-weight: bolder;
+  padding-right: 0px;
+  word-break: break-word;
+}
+
+.cover-author {
+  position: absolute;
+  overflow: hidden;
+  padding: 1%;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.realname-notice-box {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+.realname-notice-box .triangle {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid white;
+}/*# sourceMappingURL=covepage.css.map */
