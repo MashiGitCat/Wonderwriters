@@ -18,6 +18,16 @@ p {
   text-align: center;
   color: white;
 }
+@media (min-width: 1280px) {
+  .hero {
+    height: 90vh;
+  }
+}
+@media (min-width: 768px) {
+  .hero {
+    height: 120vh;
+  }
+}
 .hero::before {
   content: "";
   position: absolute;
@@ -36,10 +46,25 @@ p {
   color: white;
   margin-bottom: 18rem;
 }
+@media (min-width: 768px) {
+  .hero__text-container {
+    margin-bottom: 22rem;
+  }
+}
+@media (min-width: 1280px) {
+  .hero__text-container {
+    margin-bottom: 35rem;
+  }
+}
 .hero__text-container__subtitle-container {
   white-space: nowrap;
   overflow: hidden;
   width: 0;
+}
+@media (min-width: 768px) {
+  .hero__text-container__subtitle-container {
+    padding-bottom: 2rem;
+  }
 }
 .hero__text-container__title {
   font-family: "Literata", serif, "Georgia", "Times New Roman", Times, serif;
@@ -50,12 +75,35 @@ p {
   margin-top: 4rem;
   margin-bottom: 1rem;
 }
+@media (min-width: 768px) {
+  .hero__text-container__title {
+    margin-bottom: 1rem;
+    margin-top: 0rem;
+    font-size: 2.5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .hero__text-container__title {
+    font-size: 4rem;
+  }
+}
 .hero__text-container__subtitle {
   font-family: "Merriweather", serif;
   font-weight: 400;
   font-size: 1rem;
   margin-top: -1rem;
   display: inline-block;
+}
+@media (min-width: 768px) {
+  .hero__text-container__subtitle {
+    font-size: 1.5rem;
+    margin-top: 0rem;
+  }
+}
+@media (min-width: 1280px) {
+  .hero__text-container__subtitle {
+    font-size: 2rem;
+  }
 }
 .hero__text-container__subtitle--letter {
   display: inline-block;
