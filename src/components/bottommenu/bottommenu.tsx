@@ -75,7 +75,7 @@ const Thumb = styled("li")<{
   "&:last-child": {
     marginRight: "0",
   },
-  position: "relative", // Needed for the indicator
+  position: "relative", 
 }));
 
 const SelectedIndicator = styled("li")({
@@ -106,8 +106,8 @@ const StyledTextContainer = styled("div")<{ slide: Slide }>(({ slide }) => ({
   fontSize: "125%",
   verticalAlign: "middle",
   wordBreak: "break-word",
-  overflow: "auto", // Allow scrolling if content overflows
-  padding: "3%", // Add padding for better readability
+  overflow: "auto", 
+  padding: "3%", 
 }));
 
 const PageNumber = styled("div")({
@@ -292,7 +292,7 @@ const BottomMenu: React.FC<BottomMenuProps> = ({
 
   const handleConfirmDelete = () => {
     if (slideToDelete !== null) {
-      onDeleteSlide(slideToDelete); // Call onDeleteSlide prop
+      onDeleteSlide(slideToDelete); 
     }
     handleClosePopup();
   };
