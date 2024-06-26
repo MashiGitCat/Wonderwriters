@@ -77,43 +77,46 @@ const Nav: React.FC<NavProps> = ({ visible }) => {
       className="navbar"
     >
       <Toolbar
-        sx={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
+        className={`navbar__toolbar ${
+          isAuthenticated ? "navbar__toolbar--authenticated" : ""
+        }`}
       >
         {!isAuthenticated && (
-          <IconButton
-            edge="start"
-            sx={{ color: "#0E100F" }}
-            aria-label="menu"
-            onClick={handleMenuClick}
-          >
-            <MenuIcon />
-          </IconButton>
+          <Box className="navbar__left">
+            <IconButton
+              edge="start"
+              sx={{ color: "#0E100F" }}
+              aria-label="menu"
+              onClick={handleMenuClick}
+            >
+              <MenuIcon />
+            </IconButton>
+          </Box>
         )}
 
         <Box
-          sx={{
-            flexGrow: 20,
-            display: "flex",
-            justifyContent: "center",
-            width: "26.875rem",
-          }}
+          className={`navbar__center ${
+            isAuthenticated ? "navbar__center--left" : ""
+          }`}
         >
           <img
             src="https://res.cloudinary.com/dchzjr4bz/image/upload/v1710545748/Logo_A_bidb54.jpg"
             alt="Logo"
-            style={{ maxHeight: 80 }}
+            style={{ maxHeight: 80, cursor: "pointer" }}
             onClick={handleHomeClick}
           />
         </Box>
 
-        <Box sx={{ flexGrow: 1 }} />
-        <IconButton sx={{ color: "#0E100F" }} onClick={handleProfileMenu}>
-          <AccountCircle sx={{ fontSize: 30 }} />
-        </IconButton>
+        <Box className="navbar__right">
+          <IconButton
+            sx={{ color: "#0E100F" }}
+            onClick={handleProfileMenu}
+            className="navbar__profile-icon"
+          >
+            <AccountCircle sx={{ fontSize: 30 }} />
+          </IconButton>
+        </Box>
+
         <Menu
           id="menu-appbar"
           anchorEl={menuAnchorEl}
@@ -154,9 +157,7 @@ const Nav: React.FC<NavProps> = ({ visible }) => {
             <MenuItem onClick={handleActionPageNavigate}>
               Read, Write & Illustrate
             </MenuItem>
-            <MenuItem onClick={handleMyProjectsNavigate}>
-              My Projects
-            </MenuItem>
+            <MenuItem onClick={handleMyProjectsNavigate}>My Projects</MenuItem>
             <MenuItem onClick={handleClose}>Notifications</MenuItem>
             <MenuItem onClick={handleClose}>Settings</MenuItem>
             <MenuItem onClick={handleLogout}>Log Out</MenuItem>

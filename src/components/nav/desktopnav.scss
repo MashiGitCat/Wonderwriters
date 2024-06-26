@@ -1,0 +1,132 @@
+@import "../../styles/variables.css";
+@import "../../styles/breakpoints.scss";
+
+@mixin fontHeadings {
+  font-family: "Literata", serif, "Georgia", "Times New Roman", Times, serif;
+  font-weight: 400;
+}
+
+@mixin fontBody {
+  font-family: "Merriweather", serif;
+  font-weight: 400;
+}
+
+.desktop-nav {
+  background-color: #ffffff !important;
+  padding: 10px 0;
+
+  .MuiToolbar-root {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .desktop-nav__logo {
+    display: flex;
+    align-items: center;
+
+    img {
+      cursor: pointer;
+    }
+  }
+
+  .desktop-nav__links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    .MuiButton-root {
+      color: #333333;
+      text-transform: none;
+      font-size: 1rem;
+      @include fontBody;
+
+      &:hover {
+        background-color: rgba(253, 100, 31, 0.1);
+      }
+
+      .MuiTypography-root {
+        color: #333333;
+        @include fontBody;
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  .desktop-nav__auth-buttons {
+    display: flex;
+    gap: 10px;
+
+    .MuiButton-outlinedPrimary {
+      border-color: #FD641F;
+      color: #FD641F;
+      @include fontBody;
+      font-size: 1.5rem;
+      text-transform: capitalize;
+
+      &:hover {
+        background-color: rgba(253, 100, 31, 0.1);
+        border-color: #FD641F;
+      }
+    }
+
+    .MuiButton-containedPrimary {
+      background-color: #FD641F;
+      color: #ffffff;
+      @include fontBody;
+      font-size: 1.5rem;
+      text-transform: capitalize;
+
+      &:hover {
+        background-color: #e5531b;
+      }
+    }
+  }
+}
+
+.secondary-nav {
+  background-color: #ffffff !important;
+  padding: 10px 0;
+
+  .MuiToolbar-root {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .secondary-nav__links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    .MuiButton-root {
+      color: #333333;
+      text-transform: none;
+      font-size: 1rem;
+      @include fontBody;
+
+      &:hover {
+        background-color: rgba(253, 100, 31, 0.1);
+      }
+
+      .MuiTypography-root {
+        color: #333333;
+        @include fontBody;
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  .logout-button {
+    border-color: #FD641F;
+    color: #FD641F;
+    @include fontBody;
+    font-size: 1.5rem;
+    text-transform: capitalize;
+
+    &:hover {
+      background-color: rgba(253, 100, 31, 0.1);
+      border-color: #FD641F;
+    }
+  }
+}

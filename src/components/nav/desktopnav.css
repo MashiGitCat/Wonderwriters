@@ -1,0 +1,65 @@
+@import "../../styles/variables.css";
+.desktop-nav {
+  background-color: #ffffff !important;
+  padding: 10px 0;
+}
+.desktop-nav .MuiToolbar-root {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.desktop-nav .desktop-nav__logo {
+  display: flex;
+  align-items: center;
+}
+.desktop-nav .desktop-nav__logo img {
+  cursor: pointer;
+}
+.desktop-nav .desktop-nav__links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.desktop-nav .desktop-nav__links .MuiButton-root {
+  color: #333333;
+  text-transform: none;
+  font-size: 1rem;
+  font-family: "Merriweather", serif;
+  font-weight: 400;
+}
+.desktop-nav .desktop-nav__links .MuiButton-root:hover {
+  background-color: rgba(253, 100, 31, 0.1);
+}
+.desktop-nav .desktop-nav__links .MuiButton-root .MuiTypography-root {
+  color: #333333;
+  font-family: "Merriweather", serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+.desktop-nav .desktop-nav__auth-buttons {
+  display: flex;
+  gap: 10px;
+}
+.desktop-nav .desktop-nav__auth-buttons .MuiButton-outlinedPrimary {
+  border-color: #FD641F;
+  color: #FD641F;
+  font-family: "Merriweather", serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+}
+.desktop-nav .desktop-nav__auth-buttons .MuiButton-outlinedPrimary:hover {
+  background-color: rgba(253, 100, 31, 0.1);
+  border-color: #FD641F;
+}
+.desktop-nav .desktop-nav__auth-buttons .MuiButton-containedPrimary {
+  background-color: #FD641F;
+  color: #ffffff;
+  font-family: "Merriweather", serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+}
+.desktop-nav .desktop-nav__auth-buttons .MuiButton-containedPrimary:hover {
+  background-color: #e5531b;
+}/*# sourceMappingURL=desktopnav.css.map */

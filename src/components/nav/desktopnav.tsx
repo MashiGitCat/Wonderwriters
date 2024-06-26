@@ -1,0 +1,111 @@
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { AppBar, Toolbar, Button, Typography, Box } from "@mui/material";
+import "./desktopnav.css";
+
+const DesktopNav: React.FC = () => {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    setIsAuthenticated(!!token);
+  }, []);
+
+  const handleNavigate = (path: string) => {
+    navigate(path);
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    setIsAuthenticated(false);
+    navigate("/login");
+  };
+
+  return (
+    <>
+      <AppBar position="static" className="desktop-nav">
+        <Toolbar>
+          <Box className="desktop-nav__logo">
+            <img
+              src="https://res.cloudinary.com/maheshidevelopments/image/upload/b_rgb:FFFFFF/c_pad,w_250,h_141,ar_16:9/v1719360864/WonderWriters_B.jpg"
+              alt="Logo"
+              onClick={() => handleNavigate("/")}
+            />
+          </Box>
+          <Box className="desktop-nav__links">
+            <Button color="inherit" onClick={() => handleNavigate("/read")}>
+              <Typography variant="h6">Read</Typography>
+            </Button>
+            <Button color="inherit" onClick={() => handleNavigate("/write")}>
+              <Typography variant="h6">Write</Typography>
+            </Button>
+            <Button color="inherit" onClick={() => handleNavigate("/illustrate")}>
+              <Typography variant="h6">Illustrate</Typography>
+            </Button>
+            <Button
+              color="inherit"
+              onClick={() => handleNavigate("/subscription-plans")}
+            >
+              <Typography variant="h6">Subscription Plans</Typography>
+            </Button>
+            <Button color="inherit" onClick={() => handleNavigate("/about-us")}>
+              <Typography variant="h6">About Us</Typography>
+            </Button>
+          </Box>
+          <Box className="desktop-nav__auth-buttons">
+            {!isAuthenticated ? (
+              <>
+                <Button
+                  variant="outlined"
+                  color="primary"
+                  onClick={() => handleNavigate("/login")}
+                >
+                  Login
+                </Button>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  onClick={() => handleNavigate("/signup")}
+                >
+                  Sign up
+                </Button>
+              </>
+            ) : (
+              <Button
+                variant="outlined"
+                color="primary"
+                onClick={handleLogout}
+                className="logout-button"
+              >
+                Log Out
+              </Button>
+            )}
+          </Box>
+        </Toolbar>
+      </AppBar>
+      {isAuthenticated && (
+        <AppBar position="static" className="desktop-nav secondary-nav">
+          <Toolbar>
+            <Box className="desktop-nav__links secondary-nav__links">
+              <Button color="inherit" onClick={() => handleNavigate("/action-page/published")}>
+                <Typography variant="h6">Read, Write & Illustrate</Typography>
+              </Button>
+              <Button color="inherit" onClick={() => handleNavigate("/my-projects")}>
+                <Typography variant="h6">My Projects</Typography>
+              </Button>
+              <Button color="inherit" onClick={() => handleNavigate("/notifications")}>
+                <Typography variant="h6">Notifications</Typography>
+              </Button>
+              <Button color="inherit" onClick={() => handleNavigate("/profile")}>
+                <Typography variant="h6">Profile</Typography>
+              </Button>
+            </Box>
+          </Toolbar>
+        </AppBar>
+      )}
+    </>
+  );
+};
+
+export default DesktopNav;

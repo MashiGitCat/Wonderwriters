@@ -9,6 +9,7 @@ import {
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import NavWrapper from "./components/nav/navwrapper";
+import DesktopNav from "./components/nav/desktopnav";
 import WelcomePage from "./pages/Welcomepage";
 import LoginPage from "./pages/Loginpage";
 import SignupPage from "./pages/Signuppage";
@@ -16,6 +17,7 @@ import Home from "./pages/Homepage";
 import ActionPage from "./pages/Actionspage";
 import WriteTab from "./components/writeslide/writeslide";
 import MyProjectsPage from "./pages/Projectspage";
+import { useMediaQuery } from "@mui/material";
 
 const App = () => (
   <LocalizationProvider dateAdapter={AdapterDateFns}>
@@ -37,10 +39,11 @@ const Main = () => {
   ];
   const showNav = !hideNavOnRoutes.includes(location.pathname);
   const navigate = useNavigate();
+  const isDesktop = useMediaQuery("(min-width:1280px)");
 
   return (
     <>
-      {showNav && <NavWrapper />}
+      {showNav && (isDesktop ? <DesktopNav /> : <NavWrapper />)}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/welcome" element={<WelcomePage />} />
