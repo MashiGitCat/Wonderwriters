@@ -1,21 +1,24 @@
-// DesktopNav.tsx
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { AppBar, Toolbar, Button, Typography, Box } from "@mui/material";
 import "./desktopnav.css";
 
 interface DesktopNavProps {
   visible: boolean;
+  isAuthenticated: boolean;
 }
 
-const DesktopNav: React.FC<DesktopNavProps> = ({ visible }) => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+const DesktopNav: React.FC<DesktopNavProps> = ({ visible, isAuthenticated }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const token = localStorage.getItem("token");
-    setIsAuthenticated(!!token);
-  }, []);
+    if (isAuthenticated) {
+      const secondaryNav = document.querySelector(".secondary-nav") as HTMLElement;
+      if (secondaryNav) {
+        secondaryNav.style.display = "block";
+      }
+    }
+  }, [isAuthenticated]);
 
   const handleNavigate = (path: string) => {
     navigate(path);
@@ -23,12 +26,11 @@ const DesktopNav: React.FC<DesktopNavProps> = ({ visible }) => {
 
   const handleLogout = () => {
     localStorage.removeItem("token");
-    setIsAuthenticated(false);
     navigate("/login");
   };
 
   if (!visible) {
-    return null; // Do not render the navigation bar if not visible
+    return null; 
   }
 
   return (

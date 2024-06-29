@@ -28,15 +28,6 @@ p {
     height: 120vh;
   }
 }
-.hero::before {
-  content: "";
-  position: absolute;
-  top: 8.7rem;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 100vh;
-}
 .hero__text-container {
   display: flex;
   flex-direction: column;
@@ -53,7 +44,8 @@ p {
 }
 @media (min-width: 1280px) {
   .hero__text-container {
-    margin-bottom: 35rem;
+    justify-content: flex-end;
+    padding-bottom: 5rem;
   }
 }
 .hero__text-container__subtitle-container {

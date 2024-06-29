@@ -41,4 +41,10 @@
   .navbar__profile-icon svg {
     font-size: 40px;
   }
+}
+.navbar__drawer-paper {
+  background-color: #F2F0E4 !important;
+}
+.navbar__divider-color {
+  background-color: "#ebefec" !important;
 }/*# sourceMappingURL=nav.css.map */

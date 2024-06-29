@@ -1,5 +1,5 @@
 // App.tsx
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -20,7 +20,12 @@ import WriteTab from "./components/writeslide/writeslide";
 import MyProjectsPage from "./pages/Projectspage";
 import { useMediaQuery } from "@mui/material";
 
-const Main = () => {
+interface MainProps {
+  isAuthenticated: boolean;
+  setIsAuthenticated: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Main: React.FC<MainProps> = ({ isAuthenticated, setIsAuthenticated }) => {
   const location = useLocation();
   const hideNavOnRoutes = [
     "/action-page/write-story",
@@ -34,9 +39,14 @@ const Main = () => {
   const navigate = useNavigate();
   const isDesktop = useMediaQuery("(min-width:1280px)");
 
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    setIsAuthenticated(!!token);
+  }, [location.pathname, setIsAuthenticated]);
+
   return (
     <>
-      {showNav && (isDesktop ? <DesktopNavWrapper /> : <NavWrapper />)}
+      {showNav && (isDesktop ? <DesktopNavWrapper isAuthenticated={isAuthenticated} /> : <NavWrapper />)}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/welcome" element={<WelcomePage />} />
@@ -53,12 +63,16 @@ const Main = () => {
   );
 };
 
-const App = () => (
-  <LocalizationProvider dateAdapter={AdapterDateFns}>
-    <Router>
-      <Main />
-    </Router>
-  </LocalizationProvider>
-);
+const App = () => {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  return (
+    <LocalizationProvider dateAdapter={AdapterDateFns}>
+      <Router>
+        <Main isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} />
+      </Router>
+    </LocalizationProvider>
+  );
+};
 
 export default App;
