@@ -1,3 +1,4 @@
+// App.tsx
 import React from "react";
 import {
   BrowserRouter as Router,
@@ -9,7 +10,7 @@ import {
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import NavWrapper from "./components/nav/navwrapper";
-import DesktopNav from "./components/nav/desktopnav";
+import DesktopNavWrapper from "./components/nav/desktopnavwrapper";
 import WelcomePage from "./pages/Welcomepage";
 import LoginPage from "./pages/Loginpage";
 import SignupPage from "./pages/Signuppage";
@@ -18,14 +19,6 @@ import ActionPage from "./pages/Actionspage";
 import WriteTab from "./components/writeslide/writeslide";
 import MyProjectsPage from "./pages/Projectspage";
 import { useMediaQuery } from "@mui/material";
-
-const App = () => (
-  <LocalizationProvider dateAdapter={AdapterDateFns}>
-    <Router>
-      <Main />
-    </Router>
-  </LocalizationProvider>
-);
 
 const Main = () => {
   const location = useLocation();
@@ -43,7 +36,7 @@ const Main = () => {
 
   return (
     <>
-      {showNav && (isDesktop ? <DesktopNav /> : <NavWrapper />)}
+      {showNav && (isDesktop ? <DesktopNavWrapper /> : <NavWrapper />)}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/welcome" element={<WelcomePage />} />
@@ -59,5 +52,13 @@ const Main = () => {
     </>
   );
 };
+
+const App = () => (
+  <LocalizationProvider dateAdapter={AdapterDateFns}>
+    <Router>
+      <Main />
+    </Router>
+  </LocalizationProvider>
+);
 
 export default App;

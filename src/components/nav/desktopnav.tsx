@@ -1,9 +1,14 @@
+// DesktopNav.tsx
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { AppBar, Toolbar, Button, Typography, Box } from "@mui/material";
 import "./desktopnav.css";
 
-const DesktopNav: React.FC = () => {
+interface DesktopNavProps {
+  visible: boolean;
+}
+
+const DesktopNav: React.FC<DesktopNavProps> = ({ visible }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const navigate = useNavigate();
 
@@ -21,6 +26,10 @@ const DesktopNav: React.FC = () => {
     setIsAuthenticated(false);
     navigate("/login");
   };
+
+  if (!visible) {
+    return null; // Do not render the navigation bar if not visible
+  }
 
   return (
     <>
