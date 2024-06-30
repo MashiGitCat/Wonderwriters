@@ -71,7 +71,7 @@ const Nav: React.FC<NavProps> = ({ visible }) => {
       onKeyDown={() => toggleDrawer("menu", false)}
       className="drawer-content"
     >
-      <List>
+      <List >
         <ListItem onClick={() => handleNavigate("/read")}>
           <ListItemText primary="Read" />
         </ListItem>

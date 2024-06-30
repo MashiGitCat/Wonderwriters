@@ -1,6 +1,16 @@
 @import "../../styles/variables.css";
 @import "../../styles/breakpoints.scss";
 
+@mixin fontHeadings {
+  font-family: "Literata", serif, "Georgia", "Times New Roman", Times, serif;
+  font-weight: 400;
+}
+
+@mixin fontBody {
+  font-family: "Merriweather", serif;
+  font-weight: 400;
+}
+
 .navbar {
   padding-top: 2rem;
 
@@ -55,10 +65,24 @@
   }
 
   &__drawer-paper {
-    background-color: #F2F0E4 !important;
+    background-color: #f4863e !important;
   }
 
-  &__divider-color{
-    background-color:"#ebefec" !important;;
+  &__divider-color {
+    background-color: #fdbd29 !important;
+    transition: background-color 0.3s ease;
   }
 }
+
+.MuiTypography-root {
+  font-family: "Merriweather", serif !important;
+  font-size: 1.2rem !important;
+  color: #fdbd29;
+  letter-spacing: 0.3cap;
+  &:hover {
+    color: rgba(253, 100, 31, 1) !important;
+  }
+}
+
+
+

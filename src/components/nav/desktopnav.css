@@ -105,4 +105,8 @@
 .secondary-nav .logout-button:hover {
   background-color: rgba(253, 100, 31, 0.1);
   border-color: #FD641F;
+}
+
+.MuiPaper-root-MuiAppBar-root {
+  background-color: green;
 }/*# sourceMappingURL=desktopnav.css.map */
