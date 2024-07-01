@@ -1,5 +1,6 @@
 .steps {
   background-color: #F2F0E4;
+  padding: 2rem;
 }
 .steps__heading {
   text-align: center;
@@ -9,6 +10,16 @@
   font-weight: 400;
   font-weight: bold;
   font-size: 2rem;
+}
+@media (min-width: 768px) {
+  .steps__heading {
+    font-size: 2.5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .steps__heading {
+    font-size: 3rem;
+  }
 }
 .steps__card {
   display: flex;
@@ -42,10 +53,16 @@
 .steps__card-image {
   -o-object-fit: cover;
      object-fit: cover;
+  height: 12rem;
 }
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .steps__card-image {
-    height: 15rem;
+    height: 18rem;
+  }
+}
+@media (min-width: 1280px) {
+  .steps__card-image {
+    height: 24rem;
   }
 }
 .steps__card-content {
@@ -61,4 +78,17 @@
   font-size: 1.2rem;
   padding: 0;
   line-height: 2rem;
+}
+.steps__grid-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.steps__grid-item {
+  display: flex;
+  justify-content: center;
+}
+
+.MuiGrid-root {
+  display: flex;
+  justify-content: center;
 }/*# sourceMappingURL=steps.css.map */
