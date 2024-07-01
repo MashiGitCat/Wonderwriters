@@ -161,7 +161,7 @@ const Nav: React.FC<NavProps> = ({ visible }) => {
 
           <Box className={`navbar__center ${isAuthenticated ? "navbar__center--left" : ""}`}>
             <img
-              src="https://res.cloudinary.com/dchzjr4bz/image/upload/v1710545748/Logo_A_bidb54.jpg"
+              src="https://res.cloudinary.com/maheshidevelopments/image/upload/e_background_removal/f_png/v1717889883/Logo_A.jpg"
               alt="Logo"
               style={{ maxHeight: 80, cursor: "pointer" }}
               onClick={() => handleNavigate("/")}

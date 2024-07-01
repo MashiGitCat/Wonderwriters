@@ -54,12 +54,14 @@
     @include media-desktop {
       svg {
         font-size: 50px;
+        fill: #fd641f !important;
       }
     }
 
     @include media-tablet {
       svg {
         font-size: 40px;
+        fill: #fd641f;
       }
     }
   }
@@ -77,12 +79,15 @@
 .MuiTypography-root {
   font-family: "Merriweather", serif !important;
   font-size: 1.2rem !important;
-  color: #fdbd29!important;
+  color: #fdbd29 !important;
   letter-spacing: 0.3cap;
   &:hover {
     color: rgba(253, 100, 31, 1) !important;
   }
 }
-
-
-
+.MuiAppBar-root {
+  background-color: #fdbd29 !important;
+}
+.MuiSvgIcon-root {
+  fill: #fd641f !important;
+}

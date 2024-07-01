@@ -35,11 +35,13 @@
 @media (min-width: 1280px) {
   .navbar__profile-icon svg {
     font-size: 50px;
+    fill: #fd641f !important;
   }
 }
 @media (min-width: 768px) {
   .navbar__profile-icon svg {
     font-size: 40px;
+    fill: #fd641f;
   }
 }
 .navbar__drawer-paper {
@@ -58,4 +60,12 @@
 }
 .MuiTypography-root:hover {
   color: rgb(253, 100, 31) !important;
+}
+
+.MuiAppBar-root {
+  background-color: #fdbd29 !important;
+}
+
+.MuiSvgIcon-root {
+  fill: #fd641f !important;
 }/*# sourceMappingURL=nav.css.map */
