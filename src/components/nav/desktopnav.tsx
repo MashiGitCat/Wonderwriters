@@ -39,7 +39,7 @@ const DesktopNav: React.FC<DesktopNavProps> = ({ visible, isAuthenticated }) => 
         <Toolbar>
           <Box className="desktop-nav__logo">
             <img
-              src="https://res.cloudinary.com/maheshidevelopments/image/upload/b_rgb:FFFFFF/c_pad,w_250,h_141,ar_16:9/v1719360864/WonderWriters_B.jpg"
+              src="https://res.cloudinary.com/maheshidevelopments/image/upload/c_pad,w_300,h_169,ar_16:9/v1719869180/Photoroom_20240630_032335.png"
               alt="Logo"
               onClick={() => handleNavigate("/")}
             />

@@ -31,7 +31,7 @@
   background-color: rgba(253, 100, 31, 0.1);
 }
 .desktop-nav .desktop-nav__links .MuiButton-root .MuiTypography-root {
-  color: #333333;
+  color: #181205 !important;
   font-family: "Merriweather", serif;
   font-weight: 400;
   font-size: 1.5rem;
@@ -41,24 +41,26 @@
   gap: 10px;
 }
 .desktop-nav .desktop-nav__auth-buttons .MuiButton-outlinedPrimary {
-  border-color: #FD641F;
-  color: #FD641F;
+  border-color: #fd641f;
+  color: #fd641f;
   font-family: "Merriweather", serif;
   font-weight: 400;
   font-size: 1.5rem;
   text-transform: capitalize;
+  border-radius: 2rem;
 }
 .desktop-nav .desktop-nav__auth-buttons .MuiButton-outlinedPrimary:hover {
   background-color: rgba(253, 100, 31, 0.1);
-  border-color: #FD641F;
+  border-color: #fd641f;
 }
 .desktop-nav .desktop-nav__auth-buttons .MuiButton-containedPrimary {
-  background-color: #FD641F;
+  background-color: #fd641f;
   color: #ffffff;
   font-family: "Merriweather", serif;
   font-weight: 400;
   font-size: 1.5rem;
   text-transform: capitalize;
+  border-radius: 2rem;
 }
 .desktop-nav .desktop-nav__auth-buttons .MuiButton-containedPrimary:hover {
   background-color: #e5531b;
@@ -72,6 +74,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: none;
 }
 .secondary-nav .secondary-nav__links {
   display: flex;
@@ -89,24 +92,31 @@
   background-color: rgba(253, 100, 31, 0.1);
 }
 .secondary-nav .secondary-nav__links .MuiButton-root .MuiTypography-root {
-  color: #333333;
+  color: #181205 !important;
   font-family: "Merriweather", serif;
   font-weight: 400;
   font-size: 1.5rem;
 }
 .secondary-nav .logout-button {
-  border-color: #FD641F;
-  color: #FD641F;
+  border-color: #fd641f;
+  color: #fd641f;
   font-family: "Merriweather", serif;
   font-weight: 400;
   font-size: 1.5rem;
   text-transform: capitalize;
+  border-radius: 2rem;
 }
 .secondary-nav .logout-button:hover {
   background-color: rgba(253, 100, 31, 0.1);
-  border-color: #FD641F;
+  border-color: #fd641f;
 }
 
-.MuiPaper-root-MuiAppBar-root {
-  background-color: green;
+.MuiAppBar {
+  box-shadow: 0 !important;
+}
+
+.css-hip9hq-MuiPaper-root-MuiAppBar-root {
+  box-shadow: none !important;
+  border-bottom: 0.001rem solid #f4863e;
+  background-color: #fdbd29 !important;
 }/*# sourceMappingURL=desktopnav.css.map */
