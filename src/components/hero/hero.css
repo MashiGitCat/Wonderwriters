@@ -6,6 +6,7 @@ p {
 }
 
 .hero {
+  position: relative;
   background-image: url("https://res.cloudinary.com/dchzjr4bz/image/upload/v1705653497/image_123650291_1_uvecza.jpg");
   background-size: cover;
   background-position: center;
@@ -27,6 +28,16 @@ p {
   .hero {
     height: 120vh;
   }
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: 1;
 }
 .hero__text-container {
   display: flex;
