@@ -1,4 +1,4 @@
-@import "../../styles/variables.css";
+@import "../../styles/variables.scss";
 @import "../../styles/breakpoints.scss";
 
 @mixin fontHeadings {
@@ -11,6 +11,11 @@
   font-weight: 400;
 }
 
+@mixin fontTitle {
+  font-family: "American Typewriter";
+  font-style: normal;
+}
+
 .desktop-nav {
   background-color: #ffffff !important;
   padding: 10px 0;
@@ -19,6 +24,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @include fontTitle;
   }
 
   .desktop-nav__logo {
@@ -39,16 +45,16 @@
       color: #333333;
       text-transform: none;
       font-size: 1rem;
-      @include fontBody;
+      @include fontTitle;
 
       &:hover {
         background-color: rgba(253, 100, 31, 0.1);
       }
 
       .MuiTypography-root {
-        color: #181205!important;
-        @include fontBody;
-        font-size: 1.5rem;
+        color: #181205 !important;
+        @include fontTitle;
+        font-size: 1.2rem !important;
       }
     }
   }
@@ -60,7 +66,7 @@
     .MuiButton-outlinedPrimary {
       border-color: #fd641f;
       color: #fd641f;
-      @include fontBody;
+      @include fontTitle;
       font-size: 1.5rem;
       text-transform: capitalize;
       border-radius: 2rem;
@@ -74,7 +80,7 @@
     .MuiButton-containedPrimary {
       background-color: #fd641f;
       color: #ffffff;
-      @include fontBody;
+      @include fontTitle;
       font-size: 1.5rem;
       text-transform: capitalize;
       border-radius: 2rem;
@@ -95,26 +101,28 @@
     justify-content: space-between;
     align-items: center;
     box-shadow: none;
+    @include fontTitle;
   }
 
   .secondary-nav__links {
     display: flex;
     align-items: center;
     gap: 20px;
+    @include fontTitle;
 
     .MuiButton-root {
       color: #333333;
       text-transform: none;
       font-size: 1rem;
-      @include fontBody;
+      @include fontTitle;
 
       &:hover {
         background-color: rgba(253, 100, 31, 0.1);
       }
 
       .MuiTypography-root {
-        color: #181205!important;
-        @include fontBody;
+        color: #181205 !important;
+        @include fontTitle;
         font-size: 1.5rem;
       }
     }
@@ -123,7 +131,7 @@
   .logout-button {
     border-color: #fd641f;
     color: #fd641f;
-    @include fontBody;
+    @include fontTitle;
     font-size: 1.5rem;
     text-transform: capitalize;
     border-radius: 2rem;
@@ -133,6 +141,14 @@
       border-color: #fd641f;
     }
   }
+}
+
+.MuiTypography-root {
+  font-family: "American Typewriter" !important;
+  font-style: normal !important;
+  font-size: 1.2rem !important;
+  color: #fdbd29 !important;
+  letter-spacing: 0.3cap;
 }
 
 .MuiAppBar {

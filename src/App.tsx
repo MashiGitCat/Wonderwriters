@@ -1,4 +1,3 @@
-// App.tsx
 import React, { useState, useEffect } from "react";
 import {
   BrowserRouter as Router,
@@ -19,6 +18,7 @@ import ActionPage from "./pages/Actionspage";
 import WriteTab from "./components/writeslide/writeslide";
 import MyProjectsPage from "./pages/Projectspage";
 import { useMediaQuery } from "@mui/material";
+import Footer from "./components/footer/footer"; // Import the Footer component
 
 interface MainProps {
   isAuthenticated: boolean;
@@ -36,6 +36,7 @@ const Main: React.FC<MainProps> = ({ isAuthenticated, setIsAuthenticated }) => {
     "/my-projects",
   ];
   const showNav = !hideNavOnRoutes.includes(location.pathname);
+  const showFooter = !location.pathname.startsWith("/action-page"); // Hide footer on action page routes
   const navigate = useNavigate();
   const isDesktop = useMediaQuery("(min-width:1280px)");
 
@@ -59,6 +60,7 @@ const Main: React.FC<MainProps> = ({ isAuthenticated, setIsAuthenticated }) => {
           element={<WriteTab onExit={() => navigate("/action-page/write")} />}
         />
       </Routes>
+      {showFooter && <Footer />} {/* Conditionally render the footer */}
     </>
   );
 };
