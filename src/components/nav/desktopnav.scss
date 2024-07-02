@@ -1,0 +1,162 @@
+@import "../../styles/variables.scss";
+@import "../../styles/breakpoints.scss";
+
+@mixin fontHeadings {
+  font-family: "Literata", serif, "Georgia", "Times New Roman", Times, serif;
+  font-weight: 400;
+}
+
+@mixin fontBody {
+  font-family: "Merriweather", serif;
+  font-weight: 400;
+}
+
+@mixin fontTitle {
+  font-family: "American Typewriter";
+  font-style: normal;
+}
+
+.desktop-nav {
+  background-color: #ffffff !important;
+  padding: 10px 0;
+
+  .MuiToolbar-root {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include fontTitle;
+  }
+
+  .desktop-nav__logo {
+    display: flex;
+    align-items: center;
+
+    img {
+      cursor: pointer;
+    }
+  }
+
+  .desktop-nav__links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    .MuiButton-root {
+      color: #333333;
+      text-transform: none;
+      font-size: 1rem;
+      @include fontTitle;
+
+      &:hover {
+        background-color: rgba(253, 100, 31, 0.1);
+      }
+
+      .MuiTypography-root {
+        color: #181205 !important;
+        @include fontTitle;
+        font-size: 1.2rem !important;
+      }
+    }
+  }
+
+  .desktop-nav__auth-buttons {
+    display: flex;
+    gap: 10px;
+
+    .MuiButton-outlinedPrimary {
+      border-color: #fd641f;
+      color: #fd641f;
+      @include fontTitle;
+      font-size: 1.5rem;
+      text-transform: capitalize;
+      border-radius: 2rem;
+
+      &:hover {
+        background-color: rgba(253, 100, 31, 0.1);
+        border-color: #fd641f;
+      }
+    }
+
+    .MuiButton-containedPrimary {
+      background-color: #fd641f;
+      color: #ffffff;
+      @include fontTitle;
+      font-size: 1.5rem;
+      text-transform: capitalize;
+      border-radius: 2rem;
+
+      &:hover {
+        background-color: #e5531b;
+      }
+    }
+  }
+}
+
+.secondary-nav {
+  background-color: #ffffff !important;
+  padding: 10px 0;
+
+  .MuiToolbar-root {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: none;
+    @include fontTitle;
+  }
+
+  .secondary-nav__links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    @include fontTitle;
+
+    .MuiButton-root {
+      color: #333333;
+      text-transform: none;
+      font-size: 1rem;
+      @include fontTitle;
+
+      &:hover {
+        background-color: rgba(253, 100, 31, 0.1);
+      }
+
+      .MuiTypography-root {
+        color: #181205 !important;
+        @include fontTitle;
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  .logout-button {
+    border-color: #fd641f;
+    color: #fd641f;
+    @include fontTitle;
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    border-radius: 2rem;
+
+    &:hover {
+      background-color: rgba(253, 100, 31, 0.1);
+      border-color: #fd641f;
+    }
+  }
+}
+
+.MuiTypography-root {
+  font-family: "American Typewriter" !important;
+  font-style: normal !important;
+  font-size: 1.2rem !important;
+  color: #fdbd29 !important;
+  letter-spacing: 0.3cap;
+}
+
+.MuiAppBar {
+  box-shadow: 0 !important;
+}
+
+.css-hip9hq-MuiPaper-root-MuiAppBar-root {
+  box-shadow: none !important;
+  border-bottom: 0.001rem solid #f4863e;
+  background-color: #fdbd29 !important;
+}

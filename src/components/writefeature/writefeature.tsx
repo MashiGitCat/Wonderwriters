@@ -81,11 +81,10 @@ const WriteFeature: React.FC<WriteFeatureProps> = ({ nestedTab, setNestedTab }) 
         <Box sx={{ display: "flex", flexDirection: "column" }}>
           <CardContent>
             <Typography component="div" variant="h5">
-              Book Lover Art
+             Place to start writing  your story 
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              This artwork is a perfect gift for book lovers, featuring a unique
-              reading illustration.
+              Write with words and complete it with pictures.
             </Typography>
           </CardContent>
         </Box>

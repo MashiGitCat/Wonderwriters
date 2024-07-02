@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -9,6 +9,7 @@ import {
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import NavWrapper from "./components/nav/navwrapper";
+import DesktopNavWrapper from "./components/nav/desktopnavwrapper";
 import WelcomePage from "./pages/Welcomepage";
 import LoginPage from "./pages/Loginpage";
 import SignupPage from "./pages/Signuppage";
@@ -16,16 +17,15 @@ import Home from "./pages/Homepage";
 import ActionPage from "./pages/Actionspage";
 import WriteTab from "./components/writeslide/writeslide";
 import MyProjectsPage from "./pages/Projectspage";
+import { useMediaQuery } from "@mui/material";
+import Footer from "./components/footer/footer"; // Import the Footer component
 
-const App = () => (
-  <LocalizationProvider dateAdapter={AdapterDateFns}>
-    <Router>
-      <Main />
-    </Router>
-  </LocalizationProvider>
-);
+interface MainProps {
+  isAuthenticated: boolean;
+  setIsAuthenticated: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
-const Main = () => {
+const Main: React.FC<MainProps> = ({ isAuthenticated, setIsAuthenticated }) => {
   const location = useLocation();
   const hideNavOnRoutes = [
     "/action-page/write-story",
@@ -36,11 +36,18 @@ const Main = () => {
     "/my-projects",
   ];
   const showNav = !hideNavOnRoutes.includes(location.pathname);
+  const showFooter = !location.pathname.startsWith("/action-page"); // Hide footer on action page routes
   const navigate = useNavigate();
+  const isDesktop = useMediaQuery("(min-width:1280px)");
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    setIsAuthenticated(!!token);
+  }, [location.pathname, setIsAuthenticated]);
 
   return (
     <>
-      {showNav && <NavWrapper />}
+      {showNav && (isDesktop ? <DesktopNavWrapper isAuthenticated={isAuthenticated} /> : <NavWrapper />)}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/welcome" element={<WelcomePage />} />
@@ -53,7 +60,20 @@ const Main = () => {
           element={<WriteTab onExit={() => navigate("/action-page/write")} />}
         />
       </Routes>
+      {showFooter && <Footer />} {/* Conditionally render the footer */}
     </>
+  );
+};
+
+const App = () => {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  return (
+    <LocalizationProvider dateAdapter={AdapterDateFns}>
+      <Router>
+        <Main isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} />
+      </Router>
+    </LocalizationProvider>
   );
 };
 

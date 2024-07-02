@@ -1,0 +1,135 @@
+.desktop-nav {
+  background-color: #ffffff !important;
+  padding: 10px 0;
+}
+.desktop-nav .MuiToolbar-root {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "American Typewriter";
+  font-style: normal;
+}
+.desktop-nav .desktop-nav__logo {
+  display: flex;
+  align-items: center;
+}
+.desktop-nav .desktop-nav__logo img {
+  cursor: pointer;
+}
+.desktop-nav .desktop-nav__links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.desktop-nav .desktop-nav__links .MuiButton-root {
+  color: #333333;
+  text-transform: none;
+  font-size: 1rem;
+  font-family: "American Typewriter";
+  font-style: normal;
+}
+.desktop-nav .desktop-nav__links .MuiButton-root:hover {
+  background-color: rgba(253, 100, 31, 0.1);
+}
+.desktop-nav .desktop-nav__links .MuiButton-root .MuiTypography-root {
+  color: #181205 !important;
+  font-family: "American Typewriter";
+  font-style: normal;
+  font-size: 1.2rem !important;
+}
+.desktop-nav .desktop-nav__auth-buttons {
+  display: flex;
+  gap: 10px;
+}
+.desktop-nav .desktop-nav__auth-buttons .MuiButton-outlinedPrimary {
+  border-color: #fd641f;
+  color: #fd641f;
+  font-family: "American Typewriter";
+  font-style: normal;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  border-radius: 2rem;
+}
+.desktop-nav .desktop-nav__auth-buttons .MuiButton-outlinedPrimary:hover {
+  background-color: rgba(253, 100, 31, 0.1);
+  border-color: #fd641f;
+}
+.desktop-nav .desktop-nav__auth-buttons .MuiButton-containedPrimary {
+  background-color: #fd641f;
+  color: #ffffff;
+  font-family: "American Typewriter";
+  font-style: normal;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  border-radius: 2rem;
+}
+.desktop-nav .desktop-nav__auth-buttons .MuiButton-containedPrimary:hover {
+  background-color: #e5531b;
+}
+
+.secondary-nav {
+  background-color: #ffffff !important;
+  padding: 10px 0;
+}
+.secondary-nav .MuiToolbar-root {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: none;
+  font-family: "American Typewriter";
+  font-style: normal;
+}
+.secondary-nav .secondary-nav__links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-family: "American Typewriter";
+  font-style: normal;
+}
+.secondary-nav .secondary-nav__links .MuiButton-root {
+  color: #333333;
+  text-transform: none;
+  font-size: 1rem;
+  font-family: "American Typewriter";
+  font-style: normal;
+}
+.secondary-nav .secondary-nav__links .MuiButton-root:hover {
+  background-color: rgba(253, 100, 31, 0.1);
+}
+.secondary-nav .secondary-nav__links .MuiButton-root .MuiTypography-root {
+  color: #181205 !important;
+  font-family: "American Typewriter";
+  font-style: normal;
+  font-size: 1.5rem;
+}
+.secondary-nav .logout-button {
+  border-color: #fd641f;
+  color: #fd641f;
+  font-family: "American Typewriter";
+  font-style: normal;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  border-radius: 2rem;
+}
+.secondary-nav .logout-button:hover {
+  background-color: rgba(253, 100, 31, 0.1);
+  border-color: #fd641f;
+}
+
+.MuiTypography-root {
+  font-family: "American Typewriter" !important;
+  font-style: normal !important;
+  font-size: 1.2rem !important;
+  color: #fdbd29 !important;
+  letter-spacing: 0.3cap;
+}
+
+.MuiAppBar {
+  box-shadow: 0 !important;
+}
+
+.css-hip9hq-MuiPaper-root-MuiAppBar-root {
+  box-shadow: none !important;
+  border-bottom: 0.001rem solid #f4863e;
+  background-color: #fdbd29 !important;
+}/*# sourceMappingURL=desktopnav.css.map */

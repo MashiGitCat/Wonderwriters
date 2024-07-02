@@ -1,0 +1,41 @@
+@import "../../styles/variables.scss";
+@import "../../styles/breakpoints.scss";
+
+@mixin fontTitle {
+  font-family: "American Typewriter";
+  font-style: normal;
+}
+
+.footer {
+  background-color: $tangerine;
+  padding: 1rem 0;
+  color: #fff;
+  text-align: center;
+  height:6rem;
+
+  .footer__content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding-top:2rem;
+    padding-bottom:1rem;
+
+    @include media-tablet {
+      justify-content: center;
+    }
+  }
+
+  .footer__link {
+    @include fontTitle;
+    font-size: 0.9rem;
+    color:$yellow;
+    font-weight:bold;
+    text-decoration: none;
+    margin: 0 0.5rem;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

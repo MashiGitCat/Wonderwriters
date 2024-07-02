@@ -1,75 +1,120 @@
+@import "../../styles/breakpoints.scss";
+
 @mixin fontHeadings {
-	font-family: "Literata", serif, "Georgia", "Times New Roman", Times, serif;
-	font-weight: 400;
+  font-family: "Literata", serif, "Georgia", "Times New Roman", Times, serif;
+  font-weight: 400;
 }
 
 @mixin fontBody {
-	font-family: "Merriweather", serif;
-	font-weight: 400;
+  font-family: "Merriweather", serif;
+  font-weight: 400;
 }
 
 body,
 h1,
 p {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .hero {
-	background-image: url("https://res.cloudinary.com/dchzjr4bz/image/upload/v1705653497/image_123650291_1_uvecza.jpg");
-	background-size: cover;
-	background-position: center;
-	height: 500px;
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	color: white;
+  position: relative;
+  background-image: url("https://res.cloudinary.com/dchzjr4bz/image/upload/v1705653497/image_123650291_1_uvecza.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
 
-	&::before {
-		content: "";
-		position: absolute;
-		top: 8.7rem;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		height:100vh;
+  @include media-desktop {
+    height: 90vh;
+  }
+
+  @include media-tablet {
+	height :120vh;
+    
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1); 
+    z-index: 1; 
+  }
+
+
+ 
+
+  &__text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    margin-bottom: 18rem;
+
+	@include media-tablet{
+		margin-bottom: 22rem;
+	}
+	
+	@include media-desktop{
+    justify-content: flex-end;
+    padding-bottom:5rem;
 	}
 
-	&__text-container {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		text-align: center;
-		color: white;
-		margin-bottom: 18rem;
-
-		&__subtitle-container {
-			white-space: nowrap;
-			overflow: hidden;
-			width: 0;
-		}
-		&__title {
-			@include fontHeadings;
-			font-size: 2rem;
-			color: #494990;
-			font-weight: 600;
-			margin-top: 4rem;
-			margin-bottom: 1rem;
-		}
-
-		&__subtitle {
-			@include fontBody;
-			font-size: 1rem;
-			margin-top: -1rem;
-			display: inline-block;
-		}
-		&__subtitle--letter {
-			display: inline-block;
-			transition: color 0.3s ease;
-		}
+    &__subtitle-container {
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+	  @include media-tablet{
+		padding-bottom: 2rem;
 	}
+    }
+    &__title {
+      @include fontHeadings;
+      font-size: 2rem;
+      color: #494990;
+      font-weight: 600;
+      margin-top: 4rem;
+      margin-bottom: 1rem;
+	  @include media-tablet{
+		margin-bottom: 1rem;
+		margin-top: 0rem;
+		font-size: 2.5rem;
+	}
+
+	@include media-desktop{
+		font-size: 4rem;
+    }
+	}
+    &__subtitle {
+      @include fontBody;
+      font-size: 1rem;
+      margin-top: -1rem;
+      display: inline-block;
+
+	  @include media-tablet{
+		font-size: 1.5rem;
+		margin-top: 0rem;
+	  }
+
+	  @include media-desktop{
+		font-size: 2rem;
+    }
+}
+    &__subtitle--letter {
+      display: inline-block;
+      transition: color 0.3s ease;
+    }
+  }
 }

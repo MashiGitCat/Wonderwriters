@@ -1,9 +1,93 @@
 @import "../../styles/variables.css";
+@import "../../styles/breakpoints.scss";
+
+@mixin fontHeadings {
+  font-family: "Literata", serif, "Georgia", "Times New Roman", Times, serif;
+  font-weight: 400;
+}
+
+@mixin fontBody {
+  font-family: "Merriweather", serif;
+  font-weight: 400;
+}
 
 .navbar {
-	padding-top: 2rem;
+  padding-top: 2rem;
 
-	&__icon {
-		margin-left: 1rem;
-	}
+  &__toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &--authenticated .navbar__center {
+      justify-content: flex-start;
+      position: relative;
+      left: 0;
+      transform: none;
+    }
+  }
+
+  &__left,
+  &__right {
+    display: flex;
+    align-items: center;
+  }
+
+  &__center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    flex-grow: 0;
+
+    &--left {
+      justify-content: flex-start;
+      position: relative;
+      left: 0;
+      transform: none;
+    }
+  }
+
+  &__profile-icon {
+    @include media-desktop {
+      svg {
+        font-size: 50px;
+        fill: #fd641f !important;
+      }
+    }
+
+    @include media-tablet {
+      svg {
+        font-size: 40px;
+        fill: #fd641f;
+      }
+    }
+  }
+
+  &__drawer-paper {
+    background-color: #f4863e !important;
+  }
+
+  &__divider-color {
+    background-color: #fdbd29 !important;
+    transition: background-color 0.3s ease;
+  }
+}
+
+.MuiTypography-root {
+  font-family: "Merriweather", serif !important;
+  font-size: 1.2rem !important;
+  color: #fdbd29 !important;
+  letter-spacing: 0.3cap;
+  &:hover {
+    color: rgba(253, 100, 31, 1) !important;
+  }
+}
+.MuiAppBar-root {
+  background-color: #fdbd29 !important;
+}
+.MuiSvgIcon-root {
+  fill: #fd641f !important;
 }

@@ -1,4 +1,5 @@
 @import "../../styles/variables.scss";
+@import "../../styles/breakpoints.scss";
 
 @mixin fontHeadings {
   font-family: "Literata", serif, "Georgia", "Times New Roman", Times, serif;
@@ -17,6 +18,7 @@
 
 .steps {
   background-color: $pale-cream;
+  padding: 2rem;
 
   &__heading {
     text-align: center;
@@ -24,7 +26,15 @@
     padding-top: 2rem;
     @include fontHeadings;
     font-weight: bold;
-	font-size: 2rem;
+    font-size: 2rem;
+
+    @include media-tablet {
+      font-size: 2.5rem;
+    }
+
+    @include media-desktop {
+      font-size: 3rem;
+    }
   }
 
   &__card {
@@ -34,12 +44,13 @@
     flex-direction: column;
     justify-content: center;
     border-radius: 0.8rem;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-	transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
-	&:hover {
-		box-shadow: 0 8px 16px rgba(0,0,0,0.2); 
-		transform: translateY(-5px); 
-	  }
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+    &:hover {
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      transform: translateY(-5px);
+    }
   }
 
   &__card-heading {
@@ -56,11 +67,17 @@
     padding: 0.8rem 0.8rem;
     font-size: 1.6rem;
   }
+
   &__card-image {
     object-fit: cover;
+    height: 12rem;
 
-    @media (max-width: 768px) {
-      height: 15rem;
+    @include media-tablet {
+      height: 18rem;
+    }
+
+    @include media-desktop {
+      height: 24rem;
     }
   }
 
@@ -77,4 +94,19 @@
     padding: 0;
     line-height: 2rem;
   }
+
+  &__grid-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__grid-item {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.MuiGrid-root {
+  display: flex;
+  justify-content: center;
 }
