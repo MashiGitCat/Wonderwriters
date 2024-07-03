@@ -5,11 +5,7 @@ import MobileStepper from "@mui/material/MobileStepper";
 import Button from "@mui/material/Button";
 import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
-import SwipeableViews from "react-swipeable-views";
-import { autoPlay } from "react-swipeable-views-utils";
 import "./carousel.css";
-
-const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 interface Image {
   label: string;
@@ -17,38 +13,41 @@ interface Image {
 }
 
 interface Props {
-  images?: Image[];  
+  images?: Image[];
 }
+
 const defaultImages: Image[] = [
   {
     imgPath:
-      "https://res.cloudinary.com/maheshidevelopments/image/upload/c_fill,w_500,h_375,ar_4:3/v1714624337/Adventure.jpg",
+      "https://res.cloudinary.com/maheshidevelopments/image/upload/v1719967141/DALL_E_2024-07-02_17.38.39_-_A_whimsical_and_playful_illustration_featuring_a_line_of_charming_characters_holding_hands_similar_to_the_uploaded_image._The_characters_include_a_ra.webp",
     label: "Stories are Your Imaginations...",
   },
   {
     imgPath:
-      "https://res.cloudinary.com/maheshidevelopments/image/upload/c_crop,w_500,h_375,ar_4:3/v1714624764/illustrations_for_Apple_Today_Tab.jpg",
+      "https://res.cloudinary.com/maheshidevelopments/image/upload/v1719969031/DALL_E_2024-07-02_18.10.18_-_A_whimsical_and_artistic_illustration_featuring_a_pair_of_hands_holding_an_open_book_with_a_girl_standing_on_a_ladder_inside_the_book_drawing_flower.webp",
     label: "...Bring Out Your Ideas With Words & Pictures",
   },
   {
     imgPath:
-      "https://res.cloudinary.com/maheshidevelopments/image/upload/c_crop,w_500,h_375,ar_4:3/v1714624890/notions_and_potions.jpg",
+      "https://res.cloudinary.com/maheshidevelopments/image/upload/v1719968430/DALL_E_2024-07-02_18.00.19_-_A_whimsical_and_playful_illustration_featuring_two_girls_sitting_on_a_tree_branch_reading_books_with_their_hair_braids_intertwined._The_scene_should.webp",
     label:
       "A Community of Aspiring Storytellers with Wonderful Picture Books...",
   },
   {
     imgPath:
-      "https://res.cloudinary.com/maheshidevelopments/image/upload/c_crop,w_500,h_375,ar_4:3/v1714625299/%E5%91%86%E5%A6%B9%E5%90%83%E8%A5%BF%E7%93%9C.jpg",
+      "https://res.cloudinary.com/maheshidevelopments/image/upload/v1719968829/DALL_E_2024-07-02_18.06.55_-_A_whimsical_and_magical_illustration_featuring_a_child_and_a_small_duck_standing_between_two_shelves_filled_with_glowing_stars_similar_to_the_uploade.webp",
     label: "...Read Unique Stories From New Artists ",
   },
   {
     imgPath:
-      "https://res.cloudinary.com/maheshidevelopments/image/upload/c_crop,w_500,h_375,ar_4:3/v1714630189/download_4.jpg",
+      "https://res.cloudinary.com/maheshidevelopments/image/upload/v1719962409/carsol-item-collaboration.webp",
     label: "Publish Your Wonderful Imaginations with Wonder Writers ",
   },
 ];
 
-const SwipeableTextMobileStepper: React.FC<Props> = ({ images = defaultImages }) => {
+const SwipeableTextMobileStepper: React.FC<Props> = ({
+  images = defaultImages,
+}) => {
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
   const maxSteps = images.length;
@@ -61,14 +60,27 @@ const SwipeableTextMobileStepper: React.FC<Props> = ({ images = defaultImages })
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
 
+  React.useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveStep((prevActiveStep) =>
+        prevActiveStep === maxSteps - 1 ? 0 : prevActiveStep + 1
+      );
+    }, 6000);
+
+    return () => {
+      clearInterval(timer);
+    };
+  }, [maxSteps]);
+
   return (
     <Box sx={{ maxWidth: "100%", flexGrow: 1, position: "relative" }}>
-      <AutoPlaySwipeableViews
-        axis={theme.direction === "rtl" ? "x-reverse" : "x"}
-        index={activeStep}
-        onChangeIndex={setActiveStep}
-        enableMouseEvents
-        style={{ position: "relative" }}
+      <div
+        style={{
+          display: "flex",
+          transition: "transform 0.5s ease-in-out",
+          transform: `translateX(-${(activeStep * 100) / maxSteps}%)`,
+          width: `${100 * maxSteps}%`,
+        }}
       >
         {images.map((step, index) => (
           <Box
@@ -97,13 +109,12 @@ const SwipeableTextMobileStepper: React.FC<Props> = ({ images = defaultImages })
                 <h2 className="carousel__inside-text">
                   {step.label || "Default label if empty"}
                 </h2>
-
                 <div className="carousel__inside-text-underline"></div>
               </div>
             </Box>
           </Box>
         ))}
-      </AutoPlaySwipeableViews>
+      </div>
       <MobileStepper
         variant="dots"
         steps={maxSteps}
