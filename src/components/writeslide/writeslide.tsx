@@ -17,7 +17,9 @@ interface WriteTabProps {
   onExit: () => void;
 }
 
-const CanvasContainer = styled(Box)<{ imagePosition: Slide["imagePosition"] }>(({ imagePosition }) => ({
+const CanvasContainer = styled(Box, {
+  shouldForwardProp: (prop) => prop !== "imagePosition",
+})<{ imagePosition: Slide["imagePosition"] }>(({ imagePosition }) => ({
   backgroundColor: "white",
   borderRadius: "7px",
   width: "800px",
@@ -36,7 +38,9 @@ const CanvasContainer = styled(Box)<{ imagePosition: Slide["imagePosition"] }>((
   marginBottom: "-110px",
 }));
 
-const ImagePlaceholder = styled(Box)<{ imagePosition: Slide["imagePosition"] }>(({ imagePosition }) => ({
+const ImagePlaceholder = styled(Box, {
+  shouldForwardProp: (prop) => prop !== "imagePosition",
+})<{ imagePosition: Slide["imagePosition"] }>(({ imagePosition }) => ({
   backgroundColor: "#f4f4f4",
   width: imagePosition === "top" ? "100%" : "46%",
   height: imagePosition === "top" ? "50%" : "100%",
@@ -44,7 +48,9 @@ const ImagePlaceholder = styled(Box)<{ imagePosition: Slide["imagePosition"] }>(
   order: imagePosition === "right" ? 2 : 0,
 }));
 
-const StyledTextField = styled(TextField)<{ imagePosition: Slide["imagePosition"] }>(({ imagePosition }) => ({
+const StyledTextField = styled(TextField, {
+  shouldForwardProp: (prop) => prop !== "imagePosition",
+})<{ imagePosition: Slide["imagePosition"] }>(({ imagePosition }) => ({
   flexGrow: 1,
   margin: "2%",
   width: imagePosition === "top" ? "98%" : "30%",
@@ -82,16 +88,23 @@ const StyledTextField = styled(TextField)<{ imagePosition: Slide["imagePosition"
 
 const WriteTab: React.FC<WriteTabProps> = ({ onExit }) => {
   const username = localStorage.getItem("username") || "";
-  const [slides, setSlides] = useState<Slide[]>([{ text: "", imagePosition: "left", thumbnail: "" }]);
+  const [slides, setSlides] = useState<Slide[]>([
+    { text: "", imagePosition: "left", thumbnail: "" },
+  ]);
   const [selectedSlideIndex, setSelectedSlideIndex] = useState(0);
-  const [coverPage, setCoverPage] = useState<CoverPageState>({ title: "", author: username, imagePosition: "right" });
+  const [coverPage, setCoverPage] = useState<CoverPageState>({
+    title: "",
+    author: username,
+    imagePosition: "right",
+  });
   const [hasUnsavedChanges, setHasUnsavedChanges] = useState(false);
   const [exitPopupOpen, setExitPopupOpen] = useState(false);
   const navigate = useNavigate();
 
   const addNewSlide = () => {
     const positions: Slide["imagePosition"][] = ["left", "right", "top"];
-    const lastPosition = slides.length > 0 ? slides[slides.length - 1].imagePosition : "left";
+    const lastPosition =
+      slides.length > 0 ? slides[slides.length - 1].imagePosition : "left";
     const nextIndex = (positions.indexOf(lastPosition) + 1) % positions.length;
     const nextPosition = positions[nextIndex];
     const newSlide = { text: "", imagePosition: nextPosition, thumbnail: "" };
@@ -100,17 +113,25 @@ const WriteTab: React.FC<WriteTabProps> = ({ onExit }) => {
     setHasUnsavedChanges(true);
   };
 
-  const handleTextChange = (index: number, event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleTextChange = (
+    index: number,
+    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const newText = event.target.value.slice(0, 280);
     const textFieldElement = event.target;
     const maxHeight = 400;
     const lines = newText.split("\n");
-    const lineHeight = parseInt(window.getComputedStyle(textFieldElement).lineHeight || "0", 10);
+    const lineHeight = parseInt(
+      window.getComputedStyle(textFieldElement).lineHeight || "0",
+      10
+    );
     const height = lines.length * lineHeight;
 
     if (height <= maxHeight && newText.length <= 250) {
       const updatedSlides = slides.map((slide, i) =>
-        i === index ? { ...slide, text: newText, thumbnail: newText.slice(0, 50) + "..." } : slide
+        i === index
+          ? { ...slide, text: newText, thumbnail: newText.slice(0, 50) + "..." }
+          : slide
       );
       setSlides(updatedSlides);
       setHasUnsavedChanges(true);
@@ -132,7 +153,9 @@ const WriteTab: React.FC<WriteTabProps> = ({ onExit }) => {
     if (newSlides.length === 0) {
       setSelectedSlideIndex(0);
     } else {
-      setSelectedSlideIndex(Math.max(0, Math.min(selectedSlideIndex, newSlides.length - 1)));
+      setSelectedSlideIndex(
+        Math.max(0, Math.min(selectedSlideIndex, newSlides.length - 1))
+      );
     }
     setHasUnsavedChanges(true);
   };
@@ -202,7 +225,8 @@ const WriteTab: React.FC<WriteTabProps> = ({ onExit }) => {
     }
   };
 
-  const selectedSlide = selectedSlideIndex === 0 ? coverPage : slides[selectedSlideIndex - 1];
+  const selectedSlide =
+    selectedSlideIndex === 0 ? coverPage : slides[selectedSlideIndex - 1];
 
   return (
     <div
