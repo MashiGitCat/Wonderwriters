@@ -10,9 +10,9 @@ interface CoverPageProps {
   editable?: boolean;
 }
 
-const StyledTextField = styled(TextField)<{
-  imagePosition: "top" | "right" | "left";
-}>(({ imagePosition }) => ({
+const StyledTextField = styled(TextField, {
+  shouldForwardProp: (prop) => prop !== "imagePosition",
+})<{ imagePosition: "top" | "right" | "left" }>(({ imagePosition }) => ({
   "& .MuiInputBase-root": {
     borderRadius: "0",
     overflow: "hidden",

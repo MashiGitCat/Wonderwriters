@@ -388,7 +388,7 @@ const BottomMenu: React.FC<BottomMenuProps> = ({
         <ClosePopup
           open={openPopup}
           handleClose={handleClosePopup}
-          handleConfirm={handleConfirmDelete} 
+          handleConfirm={handleConfirmDelete}
         />
       </MenuBar>
     </DndProvider>
