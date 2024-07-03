@@ -26,9 +26,6 @@
 		"react-dom": "^18.3.1",
 		"react-router-dom": "^6.21.3",
 		"react-scripts": "5.0.1",
-		"react-slick": "^0.30.2",
-		"react-swipeable-views": "^0.14.0",
-		"react-swipeable-views-utils": "^0.14.0",
 		"slick-carousel": "^1.8.1",
 		"swiper": "^11.1.1",
 		"web-vitals": "^2.1.4"
