@@ -74,47 +74,47 @@ const SwipeableTextMobileStepper: React.FC<Props> = ({
 
   return (
     <Box sx={{ maxWidth: "100%", flexGrow: 1, position: "relative" }}>
-      <div
-        style={{
+      <Box
+        sx={{
+          height: "auto",
           display: "flex",
-          transition: "transform 0.5s ease-in-out",
-          transform: `translateX(-${(activeStep * 100) / maxSteps}%)`,
-          width: `${100 * maxSteps}%`,
+          alignItems: "center",
+          justifyContent: "center",
         }}
       >
-        {images.map((step, index) => (
-          <Box
-            key={index}
-            sx={{ position: "relative", width: "100%", height: "auto" }}
-          >
-            <img
-              src={step.imgPath}
-              alt={step.label}
-              style={{ width: "100%", height: "auto", display: "block" }}
-            />
-            <Box
-              sx={{
-                position: "absolute",
-                top: 0,
-                bottom: 0,
-                right: 0,
-                left: 0,
-                backgroundColor: "rgba(0,0,0,0.4)", // Semi-transparent overlay
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <div>
-                <h2 className="carousel__inside-text">
-                  {step.label || "Default label if empty"}
-                </h2>
-                <div className="carousel__inside-text-underline"></div>
-              </div>
-            </Box>
-          </Box>
-        ))}
-      </div>
+        <Box
+          component="img"
+          sx={{
+            height: "auto",
+            maxWidth: "100%",
+            display: "block",
+            overflow: "hidden",
+            width: "100%",
+          }}
+          src={images[activeStep].imgPath}
+          alt={images[activeStep].label}
+        />
+        <Box
+          sx={{
+            position: "absolute",
+            top: 0,
+            bottom: 0,
+            right: 0,
+            left: 0,
+            backgroundColor: "rgba(0,0,0,0.4)", // Semi-transparent overlay
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <div>
+            <h2 className="carousel__inside-text">
+              {images[activeStep].label || "Default label if empty"}
+            </h2>
+            <div className="carousel__inside-text-underline"></div>
+          </div>
+        </Box>
+      </Box>
       <MobileStepper
         variant="dots"
         steps={maxSteps}
