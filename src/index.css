@@ -1,15 +1,23 @@
-body {
+/* global.css */
+html, body {
   margin: 0;
   padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  width: 100%; /* Ensure the body takes full width */
 }
 
-html,
-body {
-  box-sizing: border-box;
+* {
+  box-sizing: border-box; /* Include padding and border in element's width and height */
 }
 
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
+/* Ensure the container fits within the viewport */
+.container {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
