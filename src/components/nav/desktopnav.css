@@ -1,5 +1,4 @@
 .desktop-nav {
-  background-color: #ffffff !important;
   padding: 10px 0;
 }
 .desktop-nav .MuiToolbar-root {
@@ -68,8 +67,8 @@
 }
 
 .secondary-nav {
-  background-color: #ffffff !important;
   padding: 10px 0;
+  background-color: #fdbd29 !important;
 }
 .secondary-nav .MuiToolbar-root {
   display: flex;
