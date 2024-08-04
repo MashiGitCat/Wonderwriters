@@ -12,12 +12,18 @@ const Login = () => {
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    fetch("http://localhost:8080/api/users/login", {
+    const apiUrl =
+      process.env.NODE_ENV === "production"
+        ? "https://wonderwriters.onrender.com/api/users/login"
+        : "http://localhost:8080/api/users/login";
+
+    fetch(apiUrl, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ email, password }),
+      credentials: "include", 
     })
       .then((response) => response.json())
       .then((data) => {
@@ -28,7 +34,6 @@ const Login = () => {
           localStorage.setItem("token", data.token);
           localStorage.setItem("username", data.username);
           console.log("Username stored in localStorage:", data.username);
-          fetchProtectedData();
           navigate("/");
         }
       })
@@ -36,23 +41,6 @@ const Login = () => {
         console.error("Error:", error);
         alert("Login failed");
       });
-  };
-  const fetchProtectedData = () => {
-    const token = localStorage.getItem("token");
-    if (token) {
-      fetch("http://localhost:8080/api/users/protected", {
-        method: "GET",
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json",
-        },
-      })
-        .then((response) => response.json())
-        .then((data) => console.log("Protected data:", data))
-        .catch((error) =>
-          console.error("Error fetching protected data:", error)
-        );
-    }
   };
   return (
     <div className="login">
