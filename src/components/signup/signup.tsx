@@ -55,6 +55,10 @@ const Signup: React.FC = () => {
       alert("Passwords do not match!");
       return;
     }
+
+    const apiUrl = process.env.NODE_ENV === 'production'
+      ? 'https://wonderwriters.onrender.com/api/users/register'
+      : 'http://localhost:8080/api/users/register';
     const userData = {
       username,
       email,
@@ -62,12 +66,13 @@ const Signup: React.FC = () => {
       birthDate,
       country,
     };
-    fetch("http://localhost:8080/api/users/register", {
+    fetch(apiUrl, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(userData),
+      credentials: 'include' 
     })
       .then((response) => response.json())
       .then((data) => {

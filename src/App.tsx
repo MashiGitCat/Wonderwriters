@@ -60,7 +60,7 @@ const Main: React.FC<MainProps> = ({ isAuthenticated, setIsAuthenticated }) => {
           element={<WriteTab onExit={() => navigate("/action-page/write")} />}
         />
       </Routes>
-      {showFooter && <Footer />} {/* Conditionally render the footer */}
+      {showFooter && <Footer />} 
     </>
   );
 };
