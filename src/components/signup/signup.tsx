@@ -66,25 +66,30 @@ const Signup: React.FC = () => {
       birthDate,
       country,
     };
-    fetch(apiUrl, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(userData),
-      credentials: 'include' 
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.message) {
-          alert(data.message);
-        }
-        navigate("/login");
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-        alert("Failed to register");
+
+    try {
+      const response = await fetch(apiUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(userData),
+        credentials: 'include',
       });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      if (data.message) {
+        alert(data.message);
+      }
+      navigate("/login");
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Failed to register");
+    }
   };
 
   return (
