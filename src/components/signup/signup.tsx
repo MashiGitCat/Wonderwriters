@@ -56,9 +56,10 @@ const Signup: React.FC = () => {
       return;
     }
 
-    const apiUrl = process.env.NODE_ENV === 'production'
-      ? 'https://wonderwriters.onrender.com/api/users/register'
-      : 'http://localhost:8080/api/users/register';
+    const apiUrl =
+      process.env.NODE_ENV === "production"
+        ? "https://wonderwriters.onrender.com/api/users/register"
+        : "http://localhost:8080/api/users/register";
     const userData = {
       username,
       email,
@@ -74,7 +75,7 @@ const Signup: React.FC = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(userData),
-        credentials: 'include',
+        credentials: "include",
       });
 
       if (!response.ok) {

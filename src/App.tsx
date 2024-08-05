@@ -18,7 +18,7 @@ import ActionPage from "./pages/Actionspage";
 import WriteTab from "./components/writeslide/writeslide";
 import MyProjectsPage from "./pages/Projectspage";
 import { useMediaQuery } from "@mui/material";
-import Footer from "./components/footer/footer"; // Import the Footer component
+import Footer from "./components/footer/footer"; 
 
 interface MainProps {
   isAuthenticated: boolean;
