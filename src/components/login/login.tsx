@@ -14,7 +14,7 @@ const Login = () => {
     event.preventDefault();
     const apiUrl =
       process.env.NODE_ENV === "production"
-        ? "https://wonderwriters.onrender.com/api/users/login"
+        ? "https://wonder-writers-server.onrender.com/api/users/login"
         : "http://localhost:8080/api/users/login";
 
     fetch(apiUrl, {
