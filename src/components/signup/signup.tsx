@@ -58,8 +58,9 @@ const Signup: React.FC = () => {
 
     const apiUrl =
       process.env.NODE_ENV === "production"
-        ? "https://wonderwriters.onrender.com/api/users/register"
+        ? "https://wonder-writers-server.onrender.com/api/users/register"
         : "http://localhost:8080/api/users/register";
+    
     const userData = {
       username,
       email,
@@ -78,24 +79,18 @@ const Signup: React.FC = () => {
         credentials: "include",
       });
 
-      
-      const responseText = await response.text();
-      console.log(responseText);
-
-     
-      if (responseText) {
-        const data = JSON.parse(responseText);
-        if (data.message) {
-          alert(data.message);
-        }
-        navigate("/login");
-      } else {
-        console.error("Response body is empty.");
-        alert("Registration failed");
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || "Registration failed");
       }
+
+      const data = await response.json();
+      alert(data.message);
+      navigate("/login");
+
     } catch (error) {
       console.error("Error:", error);
-      alert("Failed to register");
+      alert(`Failed to register: ${(error as Error).message}`);
     }
   };
 
@@ -182,8 +177,6 @@ const Signup: React.FC = () => {
                 value={birthDate}
                 onChange={(newValue: Date | null) => {
                   setBirthDate(newValue);
-                  if (newValue) {
-                  }
                 }}
               />
             </FormControl>
