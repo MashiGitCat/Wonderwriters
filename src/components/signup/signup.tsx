@@ -78,15 +78,21 @@ const Signup: React.FC = () => {
         credentials: "include",
       });
 
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
+      
+      const responseText = await response.text();
+      console.log(responseText);
 
-      const data = await response.json();
-      if (data.message) {
-        alert(data.message);
+     
+      if (responseText) {
+        const data = JSON.parse(responseText);
+        if (data.message) {
+          alert(data.message);
+        }
+        navigate("/login");
+      } else {
+        console.error("Response body is empty.");
+        alert("Registration failed");
       }
-      navigate("/login");
     } catch (error) {
       console.error("Error:", error);
       alert("Failed to register");
