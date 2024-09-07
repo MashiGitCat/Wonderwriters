@@ -36,7 +36,7 @@ const Main: React.FC<MainProps> = ({ isAuthenticated, setIsAuthenticated }) => {
     "/my-projects",
   ];
   const showNav = !hideNavOnRoutes.includes(location.pathname);
-  const showFooter = !location.pathname.startsWith("/action-page"); // Hide footer on action page routes
+  const showFooter = !location.pathname.startsWith("/action-page"); 
   const navigate = useNavigate();
   const isDesktop = useMediaQuery("(min-width:1280px)");
 
