@@ -18,7 +18,7 @@ import ActionPage from "./pages/Actionspage";
 import WriteTab from "./components/writeslide/writeslide";
 import MyProjectsPage from "./pages/Projectspage";
 import { useMediaQuery } from "@mui/material";
-import Footer from "./components/footer/footer"; 
+import Footer from "./components/footer/footer";
 
 interface MainProps {
   isAuthenticated: boolean;
@@ -36,7 +36,7 @@ const Main: React.FC<MainProps> = ({ isAuthenticated, setIsAuthenticated }) => {
     "/my-projects",
   ];
   const showNav = !hideNavOnRoutes.includes(location.pathname);
-  const showFooter = !location.pathname.startsWith("/action-page"); 
+  const showFooter = !location.pathname.startsWith("/action-page");
   const navigate = useNavigate();
   const isDesktop = useMediaQuery("(min-width:1280px)");
 
@@ -47,7 +47,12 @@ const Main: React.FC<MainProps> = ({ isAuthenticated, setIsAuthenticated }) => {
 
   return (
     <>
-      {showNav && (isDesktop ? <DesktopNavWrapper isAuthenticated={isAuthenticated} /> : <NavWrapper />)}
+      {showNav &&
+        (isDesktop ? (
+          <DesktopNavWrapper isAuthenticated={isAuthenticated} />
+        ) : (
+          <NavWrapper />
+        ))}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/welcome" element={<WelcomePage />} />
@@ -60,7 +65,7 @@ const Main: React.FC<MainProps> = ({ isAuthenticated, setIsAuthenticated }) => {
           element={<WriteTab onExit={() => navigate("/action-page/write")} />}
         />
       </Routes>
-      {showFooter && <Footer />} 
+      {showFooter && <Footer />}
     </>
   );
 };
@@ -71,7 +76,10 @@ const App = () => {
   return (
     <LocalizationProvider dateAdapter={AdapterDateFns}>
       <Router>
-        <Main isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} />
+        <Main
+          isAuthenticated={isAuthenticated}
+          setIsAuthenticated={setIsAuthenticated}
+        />
       </Router>
     </LocalizationProvider>
   );

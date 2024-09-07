@@ -8,12 +8,17 @@ interface DesktopNavProps {
   isAuthenticated: boolean;
 }
 
-const DesktopNav: React.FC<DesktopNavProps> = ({ visible, isAuthenticated }) => {
+const DesktopNav: React.FC<DesktopNavProps> = ({
+  visible,
+  isAuthenticated,
+}) => {
   const navigate = useNavigate();
 
   useEffect(() => {
     if (isAuthenticated) {
-      const secondaryNav = document.querySelector(".secondary-nav") as HTMLElement;
+      const secondaryNav = document.querySelector(
+        ".secondary-nav"
+      ) as HTMLElement;
       if (secondaryNav) {
         secondaryNav.style.display = "block";
       }
@@ -30,7 +35,7 @@ const DesktopNav: React.FC<DesktopNavProps> = ({ visible, isAuthenticated }) => 
   };
 
   if (!visible) {
-    return null; 
+    return null;
   }
 
   return (
@@ -51,7 +56,10 @@ const DesktopNav: React.FC<DesktopNavProps> = ({ visible, isAuthenticated }) => 
             <Button color="inherit" onClick={() => handleNavigate("/write")}>
               <Typography variant="h6">Write</Typography>
             </Button>
-            <Button color="inherit" onClick={() => handleNavigate("/illustrate")}>
+            <Button
+              color="inherit"
+              onClick={() => handleNavigate("/illustrate")}
+            >
               <Typography variant="h6">Illustrate</Typography>
             </Button>
             <Button
@@ -99,16 +107,28 @@ const DesktopNav: React.FC<DesktopNavProps> = ({ visible, isAuthenticated }) => 
         <AppBar position="static" className="desktop-nav secondary-nav">
           <Toolbar>
             <Box className="desktop-nav__links secondary-nav__links">
-              <Button color="inherit" onClick={() => handleNavigate("/action-page/published")}>
+              <Button
+                color="inherit"
+                onClick={() => handleNavigate("/action-page/published")}
+              >
                 <Typography variant="h6">Read, Write & Illustrate</Typography>
               </Button>
-              <Button color="inherit" onClick={() => handleNavigate("/my-projects")}>
+              <Button
+                color="inherit"
+                onClick={() => handleNavigate("/my-projects")}
+              >
                 <Typography variant="h6">My Projects</Typography>
               </Button>
-              <Button color="inherit" onClick={() => handleNavigate("/notifications")}>
+              <Button
+                color="inherit"
+                onClick={() => handleNavigate("/notifications")}
+              >
                 <Typography variant="h6">Notifications</Typography>
               </Button>
-              <Button color="inherit" onClick={() => handleNavigate("/profile")}>
+              <Button
+                color="inherit"
+                onClick={() => handleNavigate("/profile")}
+              >
                 <Typography variant="h6">Profile</Typography>
               </Button>
             </Box>

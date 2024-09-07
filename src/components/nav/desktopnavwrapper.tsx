@@ -1,4 +1,3 @@
-// DesktopNavWrapper.tsx
 import React from "react";
 import { useLocation } from "react-router-dom";
 import DesktopNav from "../nav/desktopnav";
@@ -7,7 +6,9 @@ interface DesktopNavWrapperProps {
   isAuthenticated: boolean;
 }
 
-const DesktopNavWrapper: React.FC<DesktopNavWrapperProps> = ({ isAuthenticated }) => {
+const DesktopNavWrapper: React.FC<DesktopNavWrapperProps> = ({
+  isAuthenticated,
+}) => {
   const location = useLocation();
   const hideOnDesktopNavRoutes = ["/login", "/signup"];
 

@@ -60,7 +60,7 @@ const Signup: React.FC = () => {
       process.env.NODE_ENV === "production"
         ? "https://wonder-writers-server.onrender.com/api/users/register"
         : "http://localhost:8080/api/users/register";
-    
+
     const userData = {
       username,
       email,
@@ -87,7 +87,6 @@ const Signup: React.FC = () => {
       const data = await response.json();
       alert(data.message);
       navigate("/login");
-
     } catch (error) {
       console.error("Error:", error);
       alert(`Failed to register: ${(error as Error).message}`);

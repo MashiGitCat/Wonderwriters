@@ -99,7 +99,10 @@ const ActionPage: React.FC = () => {
         Combine writing and illustrations.
       </TabPanel>
       <Routes>
-        <Route path="write-story" element={<WriteTab onExit={() => navigate("/action-page/write")} />} />
+        <Route
+          path="write-story"
+          element={<WriteTab onExit={() => navigate("/action-page/write")} />}
+        />
       </Routes>
     </Box>
   );

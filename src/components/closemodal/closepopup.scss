@@ -1,18 +1,16 @@
-
 @mixin fontHeadings {
-  font-family: "Literata", serif, "Georgia", "Times New Roman", Times, serif !important;;
+  font-family: "Literata", serif, "Georgia", "Times New Roman", Times, serif !important;
   font-weight: 400;
 }
 
 @mixin fontBody {
-  font-family: "Merriweather", serif !important;;
+  font-family: "Merriweather", serif !important;
   font-weight: 400;
 }
 
-@mixin fontTitle{
-  font-family: 'American Typewriter' !important;
-  
-  }
+@mixin fontTitle {
+  font-family: "American Typewriter" !important;
+}
 
 body,
 h1,
@@ -27,33 +25,28 @@ p {
     text-align: center;
     font-size: 1.8rem;
     color: #fd641f;
-    line-height:3rem;
+    line-height: 3rem;
     font-weight: bold;
     letter-spacing: 0.3rem;
-    
   }
 
-  &__buttons{
+  &__buttons {
     @include fontBody;
-color:#0F1EAF !important;
-display: flex;
-align-items: center;
-font-size: 1.2rem;
-justify-content: space-evenly;
-text-transform: capitalize;
-
-
+    color: #0f1eaf !important;
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    justify-content: space-evenly;
+    text-transform: capitalize;
   }
 
-  &__paragraph{
-    @include fontBody; 
+  &__paragraph {
+    @include fontBody;
     font-size: 1.3rem;
     color: #fd641f !important;
-
   }
 
-  &__button-container{
-
+  &__button-container {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;

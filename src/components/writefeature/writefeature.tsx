@@ -57,9 +57,12 @@ const CustomTab = styled(Tab)(({ theme }) => ({
   },
 }));
 
-const WriteFeature: React.FC<WriteFeatureProps> = ({ nestedTab, setNestedTab }) => {
+const WriteFeature: React.FC<WriteFeatureProps> = ({
+  nestedTab,
+  setNestedTab,
+}) => {
   const navigate = useNavigate();
-  
+
   const handleNestedTabChange = (
     event: React.SyntheticEvent,
     newValue: number
@@ -81,7 +84,7 @@ const WriteFeature: React.FC<WriteFeatureProps> = ({ nestedTab, setNestedTab }) 
         <Box sx={{ display: "flex", flexDirection: "column" }}>
           <CardContent>
             <Typography component="div" variant="h5">
-             Place to start writing  your story 
+              Place to start writing your story
             </Typography>
             <Typography variant="body2" color="text.secondary">
               Write with words and complete it with pictures.

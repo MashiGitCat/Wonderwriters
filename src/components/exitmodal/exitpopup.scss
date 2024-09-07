@@ -1,62 +1,54 @@
-
 @mixin fontHeadings {
-    font-family: "Literata", serif, "Georgia", "Times New Roman", Times, serif !important;;
-    font-weight: 400;
+  font-family: "Literata", serif, "Georgia", "Times New Roman", Times, serif !important;
+  font-weight: 400;
+}
+
+@mixin fontBody {
+  font-family: "Merriweather", serif !important;
+  font-weight: 400;
+}
+
+@mixin fontTitle {
+  font-family: "American Typewriter" !important;
+}
+
+body,
+h1,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.popup {
+  &__content {
+    @include fontTitle;
+    text-align: center;
+    font-size: 1.8rem;
+    color: #fd641f;
+    line-height: 3rem;
+    font-weight: bold;
+    letter-spacing: 0.3rem;
   }
-  
-  @mixin fontBody {
-    font-family: "Merriweather", serif !important;;
-    font-weight: 400;
+
+  &__buttons {
+    @include fontBody;
+    color: #0f1eaf !important;
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    justify-content: space-evenly;
+    text-transform: capitalize;
   }
-  
-  @mixin fontTitle{
-    font-family: 'American Typewriter' !important;
-    
-    }
-  
-  body,
-  h1,
-  p {
-    margin: 0;
-    padding: 0;
+
+  &__paragraph {
+    @include fontBody;
+    font-size: 1.3rem;
+    color: #fd641f !important;
   }
-  
-  .popup {
-    &__content {
-      @include fontTitle;
-      text-align: center;
-      font-size: 1.8rem;
-      color: #fd641f;
-      line-height:3rem;
-      font-weight: bold;
-      letter-spacing: 0.3rem;
-      
-    }
-  
-    &__buttons{
-      @include fontBody;
-  color:#0F1EAF !important;
-  display: flex;
-  align-items: center;
-  font-size: 1.2rem;
-  justify-content: space-evenly;
-  text-transform: capitalize;
-  
-  
-    }
-  
-    &__paragraph{
-      @include fontBody; 
-      font-size: 1.3rem;
-      color: #fd641f !important;
-  
-    }
-  
-    &__button-container{
-  
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-    }
+
+  &__button-container {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
-  
+}

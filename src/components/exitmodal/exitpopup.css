@@ -17,7 +17,7 @@ p {
 .popup__buttons {
   font-family: "Merriweather", serif !important;
   font-weight: 400;
-  color: #0F1EAF !important;
+  color: #0f1eaf !important;
   display: flex;
   align-items: center;
   font-size: 1.2rem;

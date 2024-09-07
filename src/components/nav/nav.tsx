@@ -71,7 +71,7 @@ const Nav: React.FC<NavProps> = ({ visible }) => {
       onKeyDown={() => toggleDrawer("menu", false)}
       className="drawer-content"
     >
-      <List >
+      <List>
         <ListItem onClick={() => handleNavigate("/read")}>
           <ListItemText primary="Read" />
         </ListItem>
@@ -149,17 +149,34 @@ const Nav: React.FC<NavProps> = ({ visible }) => {
 
   return (
     <>
-      <AppBar position="static" sx={{ backgroundColor: "#ffff", paddingBottom: "24px" }} className="navbar">
-        <Toolbar className={`navbar__toolbar ${isAuthenticated ? "navbar__toolbar--authenticated" : ""}`}>
+      <AppBar
+        position="static"
+        sx={{ backgroundColor: "#ffff", paddingBottom: "24px" }}
+        className="navbar"
+      >
+        <Toolbar
+          className={`navbar__toolbar ${
+            isAuthenticated ? "navbar__toolbar--authenticated" : ""
+          }`}
+        >
           {!isAuthenticated && (
             <Box className="navbar__left">
-              <IconButton edge="start" sx={{ color: "#0E100F" }} aria-label="menu" onClick={() => toggleDrawer("menu", true)}>
+              <IconButton
+                edge="start"
+                sx={{ color: "#0E100F" }}
+                aria-label="menu"
+                onClick={() => toggleDrawer("menu", true)}
+              >
                 <MenuIcon />
               </IconButton>
             </Box>
           )}
 
-          <Box className={`navbar__center ${isAuthenticated ? "navbar__center--left" : ""}`}>
+          <Box
+            className={`navbar__center ${
+              isAuthenticated ? "navbar__center--left" : ""
+            }`}
+          >
             <img
               src="https://res.cloudinary.com/maheshidevelopments/image/upload/e_background_removal/f_png/v1717889883/Logo_A.jpg"
               alt="Logo"
@@ -169,18 +186,32 @@ const Nav: React.FC<NavProps> = ({ visible }) => {
           </Box>
 
           <Box className="navbar__right">
-            <IconButton sx={{ color: "#0E100F" }} onClick={handleProfileClick} className="navbar__profile-icon">
+            <IconButton
+              sx={{ color: "#0E100F" }}
+              onClick={handleProfileClick}
+              className="navbar__profile-icon"
+            >
               <AccountCircle sx={{ fontSize: 30 }} />
             </IconButton>
           </Box>
         </Toolbar>
       </AppBar>
 
-      <Drawer anchor="left" open={drawerOpen} onClose={() => toggleDrawer("menu", false)} PaperProps={{ className: 'navbar__drawer-paper' }}>
+      <Drawer
+        anchor="left"
+        open={drawerOpen}
+        onClose={() => toggleDrawer("menu", false)}
+        PaperProps={{ className: "navbar__drawer-paper" }}
+      >
         {menuList}
       </Drawer>
 
-      <Drawer anchor="right" open={profileDrawerOpen} onClose={() => toggleDrawer("profile", false)} PaperProps={{ className: 'navbar__drawer-paper' }}>
+      <Drawer
+        anchor="right"
+        open={profileDrawerOpen}
+        onClose={() => toggleDrawer("profile", false)}
+        PaperProps={{ className: "navbar__drawer-paper" }}
+      >
         {profileList}
       </Drawer>
     </>

@@ -101,7 +101,7 @@ const SwipeableTextMobileStepper: React.FC<Props> = ({
             bottom: 0,
             right: 0,
             left: 0,
-            backgroundColor: "rgba(0,0,0,0.4)", // Semi-transparent overlay
+            backgroundColor: "rgba(0,0,0,0.4)",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",

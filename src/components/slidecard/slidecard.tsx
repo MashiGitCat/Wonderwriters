@@ -10,7 +10,9 @@ interface SlideCardProps {
   editable?: boolean;
 }
 
-const StyledTextField = styled(TextField)<{ imagePosition: "top" | "right" | "left" }>(({ imagePosition }) => ({
+const StyledTextField = styled(TextField)<{
+  imagePosition: "top" | "right" | "left";
+}>(({ imagePosition }) => ({
   "& .MuiInputBase-root": {
     borderRadius: "0",
     overflow: "hidden",
@@ -161,7 +163,10 @@ const SlideCard: React.FC<SlideCardProps> = ({
                 </Box>
               )}
               {editable && (
-                <AuthorTooltip title="Please do not enter your real name!" arrow>
+                <AuthorTooltip
+                  title="Please do not enter your real name!"
+                  arrow
+                >
                   <StyledTextField
                     value={`By: ${slide.author}`}
                     variant="outlined"
@@ -246,7 +251,10 @@ const SlideCard: React.FC<SlideCardProps> = ({
                 </Box>
               )}
               {editable && (
-                <AuthorTooltip title="Please do not enter your real name!" arrow>
+                <AuthorTooltip
+                  title="Please do not enter your real name!"
+                  arrow
+                >
                   <StyledTextField
                     value={`By: ${slide.author}`}
                     variant="outlined"

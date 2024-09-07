@@ -46,11 +46,11 @@ const MenuButtons = styled(Box)({
 const Logo = styled("div")({
   textAlign: "center",
   img: {
-    borderRadius: "50%", // Makes the logo rounded
-    backgroundColor: "transparent", // Ensures no background color
-    height: "50px", // Adjust height as needed
-    width: "50px", // Adjust width as needed to maintain aspect ratio
-    objectFit: "cover", // Ensures the image covers the area without distortion
+    borderRadius: "50%", 
+    backgroundColor: "transparent", 
+    height: "50px", 
+    width: "50px", 
+    objectFit: "cover", 
   },
 });
 
@@ -87,7 +87,7 @@ const TopMenu: React.FC<TopMenuProps> = ({
     <MenuBar className="topmenu__font">
       <MenuButtons>
         <Button className="topmenu__button" onClick={handleExitClick}>
-          {exitLabel} {/* Use exitLabel prop */}
+          {exitLabel} {}
         </Button>
         <Button id="save_button" className="topmenu__button" onClick={onSave}>
           Save

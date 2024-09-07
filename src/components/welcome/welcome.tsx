@@ -30,16 +30,16 @@ const Welcome: React.FC = () => {
             onClick={handleLogoClick}
             className="welcome__circle-placeholder"
             sx={{
-				padding: 0, 
-				minWidth: 'auto', 
-				width: 150, 
-				borderRadius: '50%', 
-				background: 'url("https://res.cloudinary.com/dchzjr4bz/image/upload/v1710545748/Logo_A_bidb54.jpg") no-repeat center center',
-				backgroundSize: 'cover', 
-				border: 'none'
-			}}
-          >
-          </Button>
+              padding: 0,
+              minWidth: "auto",
+              width: 150,
+              borderRadius: "50%",
+              background:
+                'url("https://res.cloudinary.com/dchzjr4bz/image/upload/v1710545748/Logo_A_bidb54.jpg") no-repeat center center',
+              backgroundSize: "cover",
+              border: "none",
+            }}
+          ></Button>
           <h2 className="welcome__heading">Welcome to WonderWriters</h2>
           <div className="welcome__line"></div>
           <Button

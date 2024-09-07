@@ -1,4 +1,4 @@
-@use "../../styles/partials/colors" as*;
+@use "../../styles/partials/colors" as *;
 
 @mixin fontHeadings {
   font-family: "Literata", serif, "Georgia", "Times New Roman", Times, serif;
@@ -16,8 +16,8 @@
   align-items: center;
   min-height: 100vh;
   &__image {
-		width: 340px;
-	}
+    width: 340px;
+  }
 
   &__card {
     padding: 2rem;
@@ -35,7 +35,7 @@
   }
 
   &__textfields {
-    width: 100%; 
+    width: 100%;
     margin-bottom: 1rem;
 
     .MuiFormLabel-root {
@@ -59,7 +59,7 @@
   &__sign-in-button {
     background-color: $orange;
     letter-spacing: 0.15rem;
-    font-family: inherit; 
+    font-family: inherit;
     &:hover {
       background-color: darken($orange, 10%);
     }
@@ -70,7 +70,7 @@
     font-size: 1rem;
     text-align: center;
     color: $dark-blue;
-    cursor: pointer; 
+    cursor: pointer;
     margin-top: 1rem;
   }
 }

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Box, Tab, Tabs, Typography } from "@mui/material";
-import BookmarkIcon from "@mui/icons-material/Bookmark"; // Import the BookmarkIcon
+import BookmarkIcon from "@mui/icons-material/Bookmark"; 
 import Drafts from "../components/drafts/draft";
 
 interface TabPanelProps {
@@ -48,7 +48,7 @@ const MyProjectsPage: React.FC = () => {
       </Box>
       <TabPanel value={selectedTab} index={0}>
         <Box display="flex" alignItems="center">
-          <BookmarkIcon sx={{ fontSize: 30 }} /> {/* Add the BookmarkIcon */}
+          <BookmarkIcon sx={{ fontSize: 30 }} /> {}
           <Typography variant="h5">DRAFTS</Typography>
         </Box>
         <Drafts />

@@ -24,9 +24,7 @@ const ClosePopup: React.FC<ClosePopupProps> = ({
     <Dialog open={open} onClose={handleClose}>
       <DialogTitle className="popup__content">{"Delete Page ?"}</DialogTitle>
       <DialogContent>
-        <DialogContentText className="popup__paragraph">
-        
-        </DialogContentText>
+        <DialogContentText className="popup__paragraph"></DialogContentText>
       </DialogContent>
       <DialogActions className="popup__button-container">
         <Button className="popup__buttons" onClick={handleClose}>
