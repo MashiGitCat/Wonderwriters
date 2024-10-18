@@ -30,23 +30,17 @@ const Signup: React.FC = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("https://api.first.org/data/v1/countries")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        return response.json();
-      })
+    fetch("https://restcountries.com/v3.1/all")
+      .then((response) => response.json())
       .then((data) => {
-        const countryNames: ICountry[] = Object.values(data.data).map(
-          (country: any) => ({
-            name: country.country,
-            code: country["country-code"],
+        const countryNames = data.map(
+          (country: { name: { common: any }; cca2: any }) => ({
+            name: country.name.common,
+            code: country.cca2,
           })
         );
         setCountries(countryNames);
-      })
-      .catch((error) => console.error("Error fetching countries:", error));
+      });
   }, []);
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
